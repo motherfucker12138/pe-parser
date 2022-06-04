@@ -1,4 +1,4 @@
-[中文](https://github.com/motherfucker12138/pe-parser/blob/main/readme-ZH.md）
+[中文](https://github.com/motherfucker12138/pe-parser/blob/main/readme-ZH.md)
 
 I don't know how to export the import table of PE file with [PE-bear](https://github.com/hasherezade/pe-bear-releases)
 
