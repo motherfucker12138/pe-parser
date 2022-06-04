@@ -86,7 +86,7 @@ _ui _4_bytes_deal(char* buffer) {
 }
 
 
-// ¶¨ÒåÒ»¸ö½á¹¹Ìå£¬ÓÃÀ´´æ·Åsection header
+// å®šä¹‰ä¸€ä¸ªç»“æ„ä½“ï¼Œç”¨æ¥å­˜æ”¾section header
 typedef unsigned short WORD;
 typedef unsigned long DWORD;
 struct SECTION_HEADER_STRUCT {
@@ -104,7 +104,7 @@ struct SECTION_HEADER_STRUCT {
 } section_header, *p_section_header;
 
 void flag_display(std::map<_ui, motherfucker_string> fucking_map, _ui flag_value) {
-    cout("ÏÂÃæÊä³öÆôÓÃÁËµÄ±êÖ¾Î»£º\n");
+    cout("ä¸‹é¢è¾“å‡ºå¯ç”¨äº†çš„æ ‡å¿—ä½ï¼š\n");
     std::map<_ui, motherfucker_string>::iterator iter;
     iter = fucking_map.begin();
     while(iter != fucking_map.end()) {
@@ -130,10 +130,10 @@ _ui convert_rva_to_file_pointer(_ui rva, struct SECTION_HEADER_STRUCT* _p_sectio
         _ui fuckyou = _p_section_header[i].virtual_address + _p_section_header[i].virtual_size;
         FUCK("fuckyou: 0x%x\n",fuckyou);
         if(fuckyou >= time_stamp_umber_of_sections) {
-            // cout("Ğ¡»ï×ÓÄãÔõÃ´»ØÊÂ£¿\n");
-            // cout("Ğ¡»ï×ÓÄãÔõÃ´»ØÊÂ£¿\n");
+            // cout("å°ä¼™å­ä½ æ€ä¹ˆå›äº‹ï¼Ÿ\n");
+            // cout("å°ä¼™å­ä½ æ€ä¹ˆå›äº‹ï¼Ÿ\n");
             FUCK("0x%x\n",time_stamp_umber_of_sections);
-            // cout("Ğ¡»ï×ÓÄãÔõÃ´»ØÊÂ£¿\n");
+            // cout("å°ä¼™å­ä½ æ€ä¹ˆå›äº‹ï¼Ÿ\n");
             FUCK("0x%x\n",_p_section_header[i].virtual_address);
             FUCK("%x\n",(_ui)_p_section_header[i].virtual_address);
             FUCK("%x\n", _p_section_header[i].pointer_to_raw_data);
@@ -143,50 +143,50 @@ _ui convert_rva_to_file_pointer(_ui rva, struct SECTION_HEADER_STRUCT* _p_sectio
 }
 
 int _tmain(int argc, TCHAR *argv[]){
-	*stdout = *fopen("motherfuckerout.txt","w"); 
+*stdout = *fopen("motherfuckerout.txt","w"); 
     // LPCTSTR _fucking_final_name = _TEXT("C:\\users\\public\\downloads\\Final.gif");
     // CopyFile(argv[1],"",0)
     
     std::map<_ui, std::string> machine_type_my_map ;
 
 machine_type_my_map.insert(std::pair<_ui,std::string>(0x8664,"IMAGE_FILE_MACHINE_AMD64"));
-    //ÎÒµçÄÔµÄcmd×ÜÊÇ°ÑÖĞÎÄÊä³ö³ÉÂÒÂë£¬ËùÒÔÔÚÖ´ĞĞÖ®Ç°£¬ÏÈÖ´ĞĞÒ»ÏÂchcp£¬ÈÃËûÄÜÕı³£Êä³öÖĞÎÄ
-	// ¡¢¡¢Èç¹ûÔÚÄãµÄµçÄÔÉÏ£¬chcp 936³öÏÖinvalid page£¬ÄÇÃ´Äã¿ÉÄÜĞèÒªĞŞ¸ÄÒ»Ğ©ÉèÖÃ
+    //æˆ‘ç”µè„‘çš„cmdæ€»æ˜¯æŠŠä¸­æ–‡è¾“å‡ºæˆä¹±ç ï¼Œæ‰€ä»¥åœ¨æ‰§è¡Œä¹‹å‰ï¼Œå…ˆæ‰§è¡Œä¸€ä¸‹chcpï¼Œè®©ä»–èƒ½æ­£å¸¸è¾“å‡ºä¸­æ–‡
+	// ã€ã€å¦‚æœåœ¨ä½ çš„ç”µè„‘ä¸Šï¼Œchcp 936å‡ºç°invalid pageï¼Œé‚£ä¹ˆä½ å¯èƒ½éœ€è¦ä¿®æ”¹ä¸€äº›è®¾ç½®
 	// https://social.msdn.microsoft.com/Forums/ie/zh-TW/61f4f0bc-b7d6-4010-a4a9-2359cd2b9991/invalid-code-page?forum=237
 	// https://ibb.co/KVnkzJc
- system("chcp 936");    //LPCTSTR szError = "ÓĞÄÚ¿ÛµÄ";
- SetConsoleTitle(L"My Console Window - ÄãºÃ");
+ system("chcp 936");    //LPCTSTR szError = "æœ‰å†…æ‰£çš„";
+ SetConsoleTitle(L"My Console Window - ä½ å¥½");
     HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 
     char* a = setlocale(LC_ALL, "chinese");
     SetConsoleOutputCP(CP_UTF8);
     SetConsoleCP(CP_UTF8);
-	// ´ËÊ±ascii»á±»µ±×öascii½øĞĞ±àÒë
-	/*¡¢*
+	// æ­¤æ—¶asciiä¼šè¢«å½“åšasciiè¿›è¡Œç¼–è¯‘
+	/*ã€*
 	 error C2440: 'initializing' : cannot convert from 'const wchar_t [5]' to 'LPCTSTR'
-	 ¿ÉÒÔ¿´µ½£¬±¨´íÁË£¬ËµÊÇÎŞ·¨½«¿í×Ö½Ú×Ö·ûÊı×é×ª»»³ÉLPCTSTR
-	 Å¶Å¶Å¶¡£sorry£¬ÎÒÍüÁË±£´æÎÄ¼şÁË£¬Õâ¸öÊ±ºò±àÒëÓ¦¸Ã²»»á±¨´íµÄ£¬ÒòÎªÎÒÃ»ÓĞ¶¨ÒåUNICODEºê
+	 å¯ä»¥çœ‹åˆ°ï¼ŒæŠ¥é”™äº†ï¼Œè¯´æ˜¯æ— æ³•å°†å®½å­—èŠ‚å­—ç¬¦æ•°ç»„è½¬æ¢æˆLPCTSTR
+	 å“¦å“¦å“¦ã€‚sorryï¼Œæˆ‘å¿˜äº†ä¿å­˜æ–‡ä»¶äº†ï¼Œè¿™ä¸ªæ—¶å€™ç¼–è¯‘åº”è¯¥ä¸ä¼šæŠ¥é”™çš„ï¼Œå› ä¸ºæˆ‘æ²¡æœ‰å®šä¹‰UNICODEå®
 	  error C2440: 'initializing' : cannot convert from 'const char [6]' to 'LPCTSTR'
-	  ¿ÉÒÔ¿´µ½£¬³öÏÖÁËÒâÁÏÖ®ÄÚµÄ±¨´í£¬¾ÍÊÇËµËûÃ»ÓĞ°ì·¨°Éascii×Ö·û´®×ª»»³Éunicode×Ö·û´®
-	  ÒòÎªÕâÊ±ºòÎÒÃÇµÄLPCTSTRÓÉÓÚUNICODEºêµÄ³öÏÖ£¬ÒÑ¾­±ä³ÉÁËLPCWSTR,
-	  ´ËÊ±Èç¹ûÏëÏû³ı´íÎó£¬ÎÒÃÇ¾ÍĞèÒªÏÔÊ½µØ¸æËß±àÒëÆ÷£¬Õâ¸ö×Ö·û´®ÊÇÒ»¸öUNICODE×Ö·û´®
-	  ¿ÉÒÔÊ¹ÓÃ  L
+	  å¯ä»¥çœ‹åˆ°ï¼Œå‡ºç°äº†æ„æ–™ä¹‹å†…çš„æŠ¥é”™ï¼Œå°±æ˜¯è¯´ä»–æ²¡æœ‰åŠæ³•å§asciiå­—ç¬¦ä¸²è½¬æ¢æˆunicodeå­—ç¬¦ä¸²
+	  å› ä¸ºè¿™æ—¶å€™æˆ‘ä»¬çš„LPCTSTRç”±äºUNICODEå®çš„å‡ºç°ï¼Œå·²ç»å˜æˆäº†LPCWSTR,
+	  æ­¤æ—¶å¦‚æœæƒ³æ¶ˆé™¤é”™è¯¯ï¼Œæˆ‘ä»¬å°±éœ€è¦æ˜¾å¼åœ°å‘Šè¯‰ç¼–è¯‘å™¨ï¼Œè¿™ä¸ªå­—ç¬¦ä¸²æ˜¯ä¸€ä¸ªUNICODEå­—ç¬¦ä¸²
+	  å¯ä»¥ä½¿ç”¨  L
 	  : error C2440: 'initializing' : cannot convert from 'const wchar_t [6]' to 'LPCTSTR'
-	  ¿ÉÒÔ¿´µ½£¬ÓÖ±¨´íÁË£¬Õâ»ØÊÇÒòÎªÃ»ÓĞÁËUNICODEºê£¬LPCTSTR±ä³ÉÁË charÖ¸Õë£¬¶ø²»ÊÇwcharÁË
-	  ¶ø´ËÊ±ÓÖÊ¹ÓÃÁËL±íÃ÷×Ö·û´®Ó¦¸ÃÊÇUNICODE×Ö·û´®£¬¼´wchar£¬Òò´Ë¾Í³öÏÖÁË´íÎó£¬ÆäÊµ¾ÍÊÇÎŞ·¨½«wchar×ª»»³Échar
-	  ÄÇ¸ÃÈçºÎ½â¾öÄØ£¿
+	  å¯ä»¥çœ‹åˆ°ï¼ŒåˆæŠ¥é”™äº†ï¼Œè¿™å›æ˜¯å› ä¸ºæ²¡æœ‰äº†UNICODEå®ï¼ŒLPCTSTRå˜æˆäº† charæŒ‡é’ˆï¼Œè€Œä¸æ˜¯wcharäº†
+	  è€Œæ­¤æ—¶åˆä½¿ç”¨äº†Lè¡¨æ˜å­—ç¬¦ä¸²åº”è¯¥æ˜¯UNICODEå­—ç¬¦ä¸²ï¼Œå³wcharï¼Œå› æ­¤å°±å‡ºç°äº†é”™è¯¯ï¼Œå…¶å®å°±æ˜¯æ— æ³•å°†wcharè½¬æ¢æˆchar
+	  é‚£è¯¥å¦‚ä½•è§£å†³å‘¢ï¼Ÿ
 
-	  ´ğ°¸¾ÍÊÇÊ¹ÓÃ_TEXT
-	  Ëû¿ÉÒÔ¸ù¾İUNICODEÊÇ·ñ¶¨ÒåÀ´ÅĞ¶ÏÊÇ·ñÊ¹ÓÃL
-	  ÆäÊµ_TEXTµÄ¶¨Òå¾ÍÊÇ
+	  ç­”æ¡ˆå°±æ˜¯ä½¿ç”¨_TEXT
+	  ä»–å¯ä»¥æ ¹æ®UNICODEæ˜¯å¦å®šä¹‰æ¥åˆ¤æ–­æ˜¯å¦ä½¿ç”¨L
+	  å…¶å®_TEXTçš„å®šä¹‰å°±æ˜¯
 	  #ifdef UNICODE
 	  typedef _TEXT(x) L ## x
 	  #else
 	  typedef _TEXT(x) x
 	#endif
-	²î²»¶à¾ÍÊÇÕâ¸öÑù×Ó
+	å·®ä¸å¤šå°±æ˜¯è¿™ä¸ªæ ·å­
 	*/
-//	LPCTSTR szError = _TEXT("ÓĞÄÚ¿ÛµÄ");
+//	LPCTSTR szError = _TEXT("æœ‰å†…æ‰£çš„");
 
 //    MessageBox(NULL, szError, NULL, 0);
 
@@ -196,50 +196,50 @@ machine_type_my_map.insert(std::pair<_ui,std::string>(0x8664,"IMAGE_FILE_MACHINE
 ////std::wcout << pszValue;
 ////printf("%s\n", pszValue);
 //cout(pszValue);
-//ÈÃÎÒÀ´Ğ´Ò»¸öPE Parser
-//¹¦ÄÜ¾ÍÊÇ¶ÔPEÎÄ¼ş½øĞĞ½âÎö£¬½«¸÷¸öÇø¶Î¸ø½âÎö³öÀ´
-//¸ù¾İÖ®Ç°¶ÔPE¸ñÊ½µÄÁË½â£¬´óÖÂ·ÖÎªÒÔÏÂ¼¸¸ö²¿·Ö
+//è®©æˆ‘æ¥å†™ä¸€ä¸ªPE Parser
+//åŠŸèƒ½å°±æ˜¯å¯¹PEæ–‡ä»¶è¿›è¡Œè§£æï¼Œå°†å„ä¸ªåŒºæ®µç»™è§£æå‡ºæ¥
+//æ ¹æ®ä¹‹å‰å¯¹PEæ ¼å¼çš„äº†è§£ï¼Œå¤§è‡´åˆ†ä¸ºä»¥ä¸‹å‡ ä¸ªéƒ¨åˆ†
 //DOS header
 //dos stub
 //NT header
 ////section
-//ºÃµÄ£¬ÏÂÃæ¾Í¿ªÊ¼ß£
-//Ê×ÏÈÒª¶ÁÈ¡ÎÄ¼ş£¬¶øÇÒ»¹ÒªÒÔ¶ş½øÖÆµÄĞÎÊ½¶ÁÈ¡ÎÄ¼ş
+//å¥½çš„ï¼Œä¸‹é¢å°±å¼€å§‹æ’¸
+//é¦–å…ˆè¦è¯»å–æ–‡ä»¶ï¼Œè€Œä¸”è¿˜è¦ä»¥äºŒè¿›åˆ¶çš„å½¢å¼è¯»å–æ–‡ä»¶
 
-//Ëæ±ãÔÚÍøÉÏËÑÁËÒ»±¾PE¸ñÊ½Ïà¹Ø±ê×¼µÄpdf   http://www.osdever.net/documents/PECOFF.pdf
-//    Ê×ÏÈÊÇÒ»Ğ©»ù±¾µÄ¸ÅÄî
+//éšä¾¿åœ¨ç½‘ä¸Šæœäº†ä¸€æœ¬PEæ ¼å¼ç›¸å…³æ ‡å‡†çš„pdf   http://www.osdever.net/documents/PECOFF.pdf
+//    é¦–å…ˆæ˜¯ä¸€äº›åŸºæœ¬çš„æ¦‚å¿µ
 //
-//    image file ·­Òë¹ıÀ´¾ÍÊÇ¾µÏñÎÄ¼ş£¬ÆäÊµ¾ÍÊÇ¿ÉÖ´ĞĞÎÄ¼ş£¬exe dll sysµÈµÈ
-//    Ö®ËùÒÔ½Ğ×÷¾µÏñÎÄ¼şÊÇÒòÎª£¬Õâ¸öÎÄ¼ş¾ÍÏñÊÇÄÚ´æµÄ¾µÏñÒ»Ñù£¬
-//    ¶øÇÒÒ»°ãÇé¿öÏÂÎÒÃÇ²»³ÆÆäÎª¿ÉÖ´ĞĞÎÄ¼ş£¬ÊÇÒòÎª¿ÉÖ´ĞĞÎÄ¼şÒ»°ãÖ¸exeºó×ºµÄÎÄ¼ş
-//    »¹ÓĞÆäËûÒ»ÆğÎÄ¼şËäÈ»²»¿ÉÒÔÖ±½ÓÖ´ĞĞ£¬µ«Ò²ÊÇPE¸ñÊ½µÄ£¬Í³³ÆÎªimage file¾µÏñÎÄ¼ş
+//    image file ç¿»è¯‘è¿‡æ¥å°±æ˜¯é•œåƒæ–‡ä»¶ï¼Œå…¶å®å°±æ˜¯å¯æ‰§è¡Œæ–‡ä»¶ï¼Œexe dll sysç­‰ç­‰
+//    ä¹‹æ‰€ä»¥å«ä½œé•œåƒæ–‡ä»¶æ˜¯å› ä¸ºï¼Œè¿™ä¸ªæ–‡ä»¶å°±åƒæ˜¯å†…å­˜çš„é•œåƒä¸€æ ·ï¼Œ
+//    è€Œä¸”ä¸€èˆ¬æƒ…å†µä¸‹æˆ‘ä»¬ä¸ç§°å…¶ä¸ºå¯æ‰§è¡Œæ–‡ä»¶ï¼Œæ˜¯å› ä¸ºå¯æ‰§è¡Œæ–‡ä»¶ä¸€èˆ¬æŒ‡exeåç¼€çš„æ–‡ä»¶
+//    è¿˜æœ‰å…¶ä»–ä¸€èµ·æ–‡ä»¶è™½ç„¶ä¸å¯ä»¥ç›´æ¥æ‰§è¡Œï¼Œä½†ä¹Ÿæ˜¯PEæ ¼å¼çš„ï¼Œç»Ÿç§°ä¸ºimage fileé•œåƒæ–‡ä»¶
 //
-//    Object file£¬¾ÍÊÇÊ¹ÓÃcl±àÒëÆ÷±àÒë³öÀ´µÄÒ»¸öÎÄ¼ş£¬Ò»¶¨ÒªÇø±ğÓÚÃæÏò¶ÔÏó±à³ÌÓïÑÔ£¬Õâ¸ö¶ÔÏóÎÄ¼ş
-//    ¸úÃæÏò¶ÔÏó±à³ÌÖĞµÄ¶ÔÏóÃ»ÓĞÈÎºÎ¹ØÏµ
-//    object fileÊÇlinnker£¨Á´½ÓÆ÷£©µÄÊäÈëÎÄ¼ş£¬linker»á°ÑËû¸øÁ´½Ó³Éimage file£¨²»Ò»¶¨ÊÇexe£©
+//    Object fileï¼Œå°±æ˜¯ä½¿ç”¨clç¼–è¯‘å™¨ç¼–è¯‘å‡ºæ¥çš„ä¸€ä¸ªæ–‡ä»¶ï¼Œä¸€å®šè¦åŒºåˆ«äºé¢å‘å¯¹è±¡ç¼–ç¨‹è¯­è¨€ï¼Œè¿™ä¸ªå¯¹è±¡æ–‡ä»¶
+//    è·Ÿé¢å‘å¯¹è±¡ç¼–ç¨‹ä¸­çš„å¯¹è±¡æ²¡æœ‰ä»»ä½•å…³ç³»
+//    object fileæ˜¯linnkerï¼ˆé“¾æ¥å™¨ï¼‰çš„è¾“å…¥æ–‡ä»¶ï¼Œlinkerä¼šæŠŠä»–ç»™é“¾æ¥æˆimage fileï¼ˆä¸ä¸€å®šæ˜¯exeï¼‰
 //
-//    RVA  Ïà¶ÔĞéÄâµØÖ·£¬¾ÍÊÇÏà¶ÔĞéÄâµØÖ·µÄÒ»¸öµØÖ·£¬Ïà¶ÔµÄÊÇimage base
-//    image baseµØÖ·ÊÇVA£¬Ò²¾ÍÊÇ¾ø¶ÔĞéÄâµØÖ·£¬±ÈÈçËµimage baseÊÇ0x4000,ÄÇÃ´RVA=0x100£¬»»Ëã³ÉVA¾ÍÊÇ0x4100
+//    RVA  ç›¸å¯¹è™šæ‹Ÿåœ°å€ï¼Œå°±æ˜¯ç›¸å¯¹è™šæ‹Ÿåœ°å€çš„ä¸€ä¸ªåœ°å€ï¼Œç›¸å¯¹çš„æ˜¯image base
+//    image baseåœ°å€æ˜¯VAï¼Œä¹Ÿå°±æ˜¯ç»å¯¹è™šæ‹Ÿåœ°å€ï¼Œæ¯”å¦‚è¯´image baseæ˜¯0x4000,é‚£ä¹ˆRVA=0x100ï¼Œæ¢ç®—æˆVAå°±æ˜¯0x4100
 //
-//    VA  ²»ÓÃ¶à½éÉÜÁË£¬ÉÏÃæÒÑ¾­Ëµ¹ıÁË£¬Ö»²»¹ıÓĞÒ»µã£¬¾ÍÊÇVAµÄÖµ²¢²»Ò»¶¨×¼È·£¬ÒòÎª´ËÊ±»¹Ã»ÓĞ¼ÓÔØµ½ÄÚ´æÖĞ£¬
-//    ²Ù×÷ÏµÍ³Ö¸²»¶¨»á°Ñimage¼ÓÔØµ½ÄÄ¸öÄÚ´æµØÖ·ÉÏ
+//    VA  ä¸ç”¨å¤šä»‹ç»äº†ï¼Œä¸Šé¢å·²ç»è¯´è¿‡äº†ï¼Œåªä¸è¿‡æœ‰ä¸€ç‚¹ï¼Œå°±æ˜¯VAçš„å€¼å¹¶ä¸ä¸€å®šå‡†ç¡®ï¼Œå› ä¸ºæ­¤æ—¶è¿˜æ²¡æœ‰åŠ è½½åˆ°å†…å­˜ä¸­ï¼Œ
+//    æ“ä½œç³»ç»ŸæŒ‡ä¸å®šä¼šæŠŠimageåŠ è½½åˆ°å“ªä¸ªå†…å­˜åœ°å€ä¸Š
 //
-//    file pointer£¬¾ÍÏñÊÇVAºÍRVA£¬Ö»²»¹ıVAºÍRVAÊÇÕë¶ÔÄÚ´æ¶øÑÔµÄµØÖ·£¬file ponterÊÇÕë¶Ô´ÅÅÌÎÄ¼ş¶øÑÔµÄ
-//    ÆäÊµËµ°×ÁË¶¼ÊÇÀàËÆÆ«ÒÆÁ¿µÄ¶«Î÷
+//    file pointerï¼Œå°±åƒæ˜¯VAå’ŒRVAï¼Œåªä¸è¿‡VAå’ŒRVAæ˜¯é’ˆå¯¹å†…å­˜è€Œè¨€çš„åœ°å€ï¼Œfile ponteræ˜¯é’ˆå¯¹ç£ç›˜æ–‡ä»¶è€Œè¨€çš„
+//    å…¶å®è¯´ç™½äº†éƒ½æ˜¯ç±»ä¼¼åç§»é‡çš„ä¸œè¥¿
 //
-//    time stamp Ê±¼ä´Á£¬Ã»Ê²Ã´ºÃËµµÄ
+//    time stamp æ—¶é—´æˆ³ï¼Œæ²¡ä»€ä¹ˆå¥½è¯´çš„
 //
-//    section   ¸ÅÄîÓĞµãÏñ8086»ã±àÖĞµÄsegment£¨¶Î£©
+//    section   æ¦‚å¿µæœ‰ç‚¹åƒ8086æ±‡ç¼–ä¸­çš„segmentï¼ˆæ®µï¼‰
 //
-//    Ò»¸öµäĞÍ32Î»PE½á¹¹Í¼
+//    ä¸€ä¸ªå…¸å‹32ä½PEç»“æ„å›¾
 //    https://ibb.co/rshJqNr
 
-//Õâ¸öPDF°æµÄ±ê×¼ÓĞÒ»²¿·Ö¶ªÁË£¬²»¼ûÁË£¬ÓÖÖØĞÂÕÒÁËÒ»¸ö£¬
+//è¿™ä¸ªPDFç‰ˆçš„æ ‡å‡†æœ‰ä¸€éƒ¨åˆ†ä¸¢äº†ï¼Œä¸è§äº†ï¼Œåˆé‡æ–°æ‰¾äº†ä¸€ä¸ªï¼Œ
 //https://formats.kaitai.io/microsoft_pe/microsoft_pe.svg
-//    Õâ¸ösvg°æ±¾µÄÍ¦²»´íµÄ
-//    Ö±½ÓÔÚä¯ÀÀÆ÷Àï´ò¿ª²é¿´¾ÍĞĞÁË
-//¿ªß££¬
-//ÏÈ°ÑPEÎÄ¼ş¶Áµ½Ò»¸öbufferÖĞ
+//    è¿™ä¸ªsvgç‰ˆæœ¬çš„æŒºä¸é”™çš„
+//    ç›´æ¥åœ¨æµè§ˆå™¨é‡Œæ‰“å¼€æŸ¥çœ‹å°±è¡Œäº†
+//å¼€æ’¸ï¼Œ
+//å…ˆæŠŠPEæ–‡ä»¶è¯»åˆ°ä¸€ä¸ªbufferä¸­
 //std::ifstream input( "C:\\Final.gif", std::ios::binary );
 //
 //    // copies all data into buffer
@@ -252,24 +252,24 @@ strm.open (argv[1],std::ifstream::binary);
 strm.seekg (0);
 strm.read (buffer, 2);
 //cout((unsigned char)buffer[60]);
-//cout(_TEXT("HelloÓæ Worn\n"));
-//cout(_TEXT("HelloÓæ Worn\n"));
-// MessageBox(NULL, _TEXT("ÓæÅ¸ÄÚ¿Æ"), NULL, 0);//Ê×ÏÈÊÇmagic×Ö·û´®£¬Ò²¾ÍÊÇMZ£¬Á½¸ö×Ö½Ú
-//cout(_TEXT("ÕâËûÂè¸ù±¾¾Í²»ÊÇÒ»¸öPEÎÄ¼ş\n"));
+//cout(_TEXT("Helloæ¸” Worn\n"));
+//cout(_TEXT("Helloæ¸” Worn\n"));
+// MessageBox(NULL, _TEXT("æ¸”é¸¥å†…ç§‘"), NULL, 0);//é¦–å…ˆæ˜¯magicå­—ç¬¦ä¸²ï¼Œä¹Ÿå°±æ˜¯MZï¼Œä¸¤ä¸ªå­—èŠ‚
+//cout(_TEXT("è¿™ä»–å¦ˆæ ¹æœ¬å°±ä¸æ˜¯ä¸€ä¸ªPEæ–‡ä»¶\n"));
 
 if(buffer[0]!='M' && buffer[1] != 'Z') {
-    cout("ÕâËûÂè¸ù±¾¾Í²»ÊÇÒ»¸öPEÎÄ¼ş\n");
+    cout("è¿™ä»–å¦ˆæ ¹æœ¬å°±ä¸æ˜¯ä¸€ä¸ªPEæ–‡ä»¶\n");
 }
 else{
-    cout("¼ì²âµ½Ä§Êõ×Ö·ûMZ£¬¿ÉÄÜÊÇÒ»¸öPEÎÄ¼ş£¬¼ÌĞø½âÎö¡£¡£¡£\n");
+    cout("æ£€æµ‹åˆ°é­”æœ¯å­—ç¬¦MZï¼Œå¯èƒ½æ˜¯ä¸€ä¸ªPEæ–‡ä»¶ï¼Œç»§ç»­è§£æã€‚ã€‚ã€‚\n");
 }
-//Ö±½ÓÂÔ¹ı58×Ö½Ú£¬ÒòÎªÕâĞ©ÊÂÎªÁËdosÏµÍ³¼æÈİµÄÒ»Ğ©¶«Î÷£¬¶ÔÎÒÃÇÃ»É¶ÓÃ£¬Ìø¹ı
+//ç›´æ¥ç•¥è¿‡58å­—èŠ‚ï¼Œå› ä¸ºè¿™äº›äº‹ä¸ºäº†dosç³»ç»Ÿå…¼å®¹çš„ä¸€äº›ä¸œè¥¿ï¼Œå¯¹æˆ‘ä»¬æ²¡å•¥ç”¨ï¼Œè·³è¿‡
 strm.seekg (60);
-//Í¨¹ıÉèÖÃÆ«ÒÆÁ¿ÎÒÃÇÌø¹ıÁË58×Ö½Ú£¬È»ºóÎÒÃÇÔÙ¶ÁÈ¡³öÀ´4¸ö×Ö½Ú£¬À´»ñÈ¡PE headerµÄÆ«ÒÆÁ¿
-//¾ÍÊÇNT header
+//é€šè¿‡è®¾ç½®åç§»é‡æˆ‘ä»¬è·³è¿‡äº†58å­—èŠ‚ï¼Œç„¶åæˆ‘ä»¬å†è¯»å–å‡ºæ¥4ä¸ªå­—èŠ‚ï¼Œæ¥è·å–PE headerçš„åç§»é‡
+//å°±æ˜¯NT header
 memset(buffer,0,64);
 strm.read (buffer, 4);
-//ÓÉÓÚĞ¡¶ÎĞòµÄÔ­Òò£¬ÎÒÃÇĞèÒª¶ÔÕâËÄ¸ö×Ö½Ú½øĞĞ·´Ğò
+//ç”±äºå°æ®µåºçš„åŸå› ï¼Œæˆ‘ä»¬éœ€è¦å¯¹è¿™å››ä¸ªå­—èŠ‚è¿›è¡Œååº
 char  _tmnp_string[2+1]={0};
 sprintf(_tmnp_string,"%02x",(unsigned char)buffer[3]);
 char* hex_sting = (char*)malloc(8+1);
@@ -280,23 +280,23 @@ sprintf(_tmnp_string,"%02x",(unsigned char)buffer[1]);
 strcat(hex_sting, _tmnp_string);
 sprintf(_tmnp_string,"%02x",(unsigned char)buffer[0]);
 strcat(hex_sting, _tmnp_string);
-cout("¶¨Î»µ½PE headerÆ«ÒÆÁ¿Îª£º ");
+cout("å®šä½åˆ°PE headeråç§»é‡ä¸ºï¼š ");
 //acout(hex_sting);acout("\n");
 _ui pe_header_offset=(_ui)strtoul(hex_sting,NULL,16);
 free(hex_sting);
 printf("0x%08x\n", pe_header_offset);
 
-//È»ºóÎÒÃÇ°ÑÎÄ¼şÖ¸Õë¶¨Î»µ½pe_header_offset
-//¶¨Î»ÖÃºó£¬ÏÈ¶ÁÈ¡³ö4×Ö½ÚµÄpeÇ©Ãû£¬¾ÍÊÇPE\0\0
+//ç„¶åæˆ‘ä»¬æŠŠæ–‡ä»¶æŒ‡é’ˆå®šä½åˆ°pe_header_offset
+//å®šä½ç½®åï¼Œå…ˆè¯»å–å‡º4å­—èŠ‚çš„peç­¾åï¼Œå°±æ˜¯PE\0\0
 strm.seekg (pe_header_offset);
 memset(buffer,0,64);
 strm.read (buffer, 4);
-cout("PEÇ©Ãû£º");acout(buffer);acout("\n");
-//È»ºóÊÇ20¸ö×Ö½ÚµÄcoff header£¬COFF headerÀïÃæ´æÁËºÜ¶àÖØÒªµÄĞÅÏ¢
-//ÔÚPEbearÀïÃæ£¬coff header±»³Æ×÷ file header
-//Ê×ÏÈÊÇmachine type 2bytes
-//machine typeµÄÍêÕûÁĞ±í
-/*¡¢*
+cout("PEç­¾åï¼š");acout(buffer);acout("\n");
+//ç„¶åæ˜¯20ä¸ªå­—èŠ‚çš„coff headerï¼ŒCOFF headeré‡Œé¢å­˜äº†å¾ˆå¤šé‡è¦çš„ä¿¡æ¯
+//åœ¨PEbearé‡Œé¢ï¼Œcoff headerè¢«ç§°ä½œ file header
+//é¦–å…ˆæ˜¯machine type 2bytes
+//machine typeçš„å®Œæ•´åˆ—è¡¨
+/*ã€*
 Constant	Value	Description
 IMAGE_FILE_MACHINE_UNKNOWN
 0x0
@@ -383,7 +383,7 @@ MIPS little-endian WCE v2
 strm.seekg (pe_header_offset+4);
 memset(buffer,0,64);
 strm.read (buffer, 2);
-//Í¬ÑùĞèÒª½øĞĞ·­×ª Ğ¡¶ËĞò
+//åŒæ ·éœ€è¦è¿›è¡Œç¿»è½¬ å°ç«¯åº
 
 memset(_tmnp_string,0,3);
 sprintf(_tmnp_string,"%02x",(unsigned char)buffer[1]);
@@ -392,16 +392,16 @@ strcpy(hex_sting, _tmnp_string);
 sprintf(_tmnp_string,"%02x",(unsigned char)buffer[0]);
 strcat(hex_sting, _tmnp_string);
 
-_ui machine_type_value=(_ui)strtoul(hex_sting,NULL,16);cout("machine type(´¦ÀíÆ÷)£º");
+_ui machine_type_value=(_ui)strtoul(hex_sting,NULL,16);cout("machine type(å¤„ç†å™¨)ï¼š");
 acout(machine_type_value);acout("    ");
 free(hex_sting);
 acout(machine_type_my_map[machine_type_value]);acout("\n");
-//È»ºóÊÇnumber of sections£¬¼´ÉÈÇøÊıÁ¿  2bytes
+//ç„¶åæ˜¯number of sectionsï¼Œå³æ‰‡åŒºæ•°é‡  2bytes
 _ui number_of_sections;
 strm.seekg (pe_header_offset+4+2);
 memset(buffer,0,64);
 strm.read (buffer, 2);
-//Í¬ÑùĞèÒª½øĞĞ·­×ª Ğ¡¶ËĞò
+//åŒæ ·éœ€è¦è¿›è¡Œç¿»è½¬ å°ç«¯åº
 
 memset(_tmnp_string,0,3);
 sprintf(_tmnp_string,"%02x",(unsigned char)buffer[1]);
@@ -409,20 +409,20 @@ hex_sting = (char*)malloc(8+1);
 strcpy(hex_sting, _tmnp_string);
 sprintf(_tmnp_string,"%02x",(unsigned char)buffer[0]);
 strcat(hex_sting, _tmnp_string);
-number_of_sections=(_ui)strtoul(hex_sting,NULL,16);//cout("machine type(´¦ÀíÆ÷)£º");
+number_of_sections=(_ui)strtoul(hex_sting,NULL,16);//cout("machine type(å¤„ç†å™¨)ï¼š");
 // _ui section_number = number_of_sections;
 free(hex_sting);
-cout("ÉÈÇøÊıÁ¿£º");
+cout("æ‰‡åŒºæ•°é‡ï¼š");
 acout(number_of_sections);acout("\n");
-//ÏÂÃæÊÇÊ±¼ä´Á£¬²»¹ıÕâ¸öÊ±¼ä´ÁÊÇË­µÄÊ±¼ä´Á£¿PEÎÄ¼şµÄÂğ£¿   4bytes
+//ä¸‹é¢æ˜¯æ—¶é—´æˆ³ï¼Œä¸è¿‡è¿™ä¸ªæ—¶é—´æˆ³æ˜¯è°çš„æ—¶é—´æˆ³ï¼ŸPEæ–‡ä»¶çš„å—ï¼Ÿ   4bytes
 
-// ¿´ÁË¹Ù·½ÎÄµµ£¬Õâ¸öÊ±¼ä´ÁÊÇlinkµÄÊ±¼ä´Á£¬Ò²¾ÍÊÇexeÉú³ÉµÄÊ±¼ä£¬µ«ÊÇ²»ÖªµÀÎªÉ¶ÏµÍ³PEÎÄ¼şµÄÊ±¼ä´Á¶¼ÊÇÇ§Ææ°Ù¹ÖµÄ£¬
-//ÏÔÊ¾µÄÊÇÎ´À´µÄÊ±¼ä
+// çœ‹äº†å®˜æ–¹æ–‡æ¡£ï¼Œè¿™ä¸ªæ—¶é—´æˆ³æ˜¯linkçš„æ—¶é—´æˆ³ï¼Œä¹Ÿå°±æ˜¯exeç”Ÿæˆçš„æ—¶é—´ï¼Œä½†æ˜¯ä¸çŸ¥é“ä¸ºå•¥ç³»ç»ŸPEæ–‡ä»¶çš„æ—¶é—´æˆ³éƒ½æ˜¯åƒå¥‡ç™¾æ€ªçš„ï¼Œ
+//æ˜¾ç¤ºçš„æ˜¯æœªæ¥çš„æ—¶é—´
 _ui time_stamp_umber_of_sections;
 strm.seekg (pe_header_offset+4+2+2);
 memset(buffer,0,64);
 strm.read (buffer, 4);
-//Í¬ÑùĞèÒª½øĞĞ·­×ª Ğ¡¶ËĞò
+//åŒæ ·éœ€è¦è¿›è¡Œç¿»è½¬ å°ç«¯åº
 
 memset(_tmnp_string,0,3);
 sprintf(_tmnp_string,"%02x",(unsigned char)buffer[3]);
@@ -434,12 +434,12 @@ sprintf(_tmnp_string,"%02x",(unsigned char)buffer[1]);
 strcat(hex_sting, _tmnp_string);
 sprintf(_tmnp_string,"%02x",(unsigned char)buffer[0]);
 strcat(hex_sting, _tmnp_string);
-time_stamp_umber_of_sections=(_ui)strtoul(hex_sting,NULL,16);//cout("machine type(´¦ÀíÆ÷)£º");
+time_stamp_umber_of_sections=(_ui)strtoul(hex_sting,NULL,16);//cout("machine type(å¤„ç†å™¨)ï¼š");
 free(hex_sting);
-cout("PEÎÄ¼şÉú³ÉÊ±¼ä£¨link)£º");
+cout("PEæ–‡ä»¶ç”Ÿæˆæ—¶é—´ï¼ˆlink)ï¼š");
 //acout(time_stamp_umber_of_sections);acout("\n");
-//¡¢*
-//ÏÂÃæÕâÒ»¶Î¶ÔÊ±¼ä´Á½øĞĞ´¦Àí
+//ã€*
+//ä¸‹é¢è¿™ä¸€æ®µå¯¹æ—¶é—´æˆ³è¿›è¡Œå¤„ç†
 ////////////////////////////////////////////////////////////
 static const time_t default_time = 1230728833;
 static const char default_format[] = "%a %b %d %Y";
@@ -466,12 +466,12 @@ static const char default_format[] = "%a %b %d %Y";
 
 	printf( "%s \n", timebuf );
 ////////////////////////////////////////////////////////////
-////È»ºóÔÙ¶ÁÈ¡4bytes»ñÈ¡·ûºÅ±íµÄÆ«ÒÆÁ¿
+////ç„¶åå†è¯»å–4bytesè·å–ç¬¦å·è¡¨çš„åç§»é‡
 
 strm.seekg (pe_header_offset+4+2+2+4);
 memset(buffer,0,64);
 strm.read (buffer, 4);
-//·­×ª
+//ç¿»è½¬
 memset(_tmnp_string,0,3);
 sprintf(_tmnp_string,"%02x",(unsigned char)buffer[3]);
 hex_sting = (char*)malloc(8+1);
@@ -482,18 +482,18 @@ sprintf(_tmnp_string,"%02x",(unsigned char)buffer[1]);
 strcat(hex_sting, _tmnp_string);
 sprintf(_tmnp_string,"%02x",(unsigned char)buffer[0]);
 strcat(hex_sting, _tmnp_string);
-time_stamp_umber_of_sections=(_ui)strtoul(hex_sting,NULL,16);//cout("machine type(´¦ÀíÆ÷)£º");
+time_stamp_umber_of_sections=(_ui)strtoul(hex_sting,NULL,16);//cout("machine type(å¤„ç†å™¨)ï¼š");
 free(hex_sting);
-cout("·ûºÅ±íÆ«ÒÆÁ¿£¨symbol table)£º");
-//Èç¹û½á¹ûÊÇ0£¬ÄÇ¾ÍÊÇËµÃ÷Ã»ÓĞ·ûºÅ±í
+cout("ç¬¦å·è¡¨åç§»é‡ï¼ˆsymbol table)ï¼š");
+//å¦‚æœç»“æœæ˜¯0ï¼Œé‚£å°±æ˜¯è¯´æ˜æ²¡æœ‰ç¬¦å·è¡¨
 printf("0x%08x\n",time_stamp_umber_of_sections);
 
 
-//È»ºóÔÙ¶ÁÈ¡4¸ö×Ö½Ú£¬»ñÈ¡·ûºÅµÄÊıÁ¿
+//ç„¶åå†è¯»å–4ä¸ªå­—èŠ‚ï¼Œè·å–ç¬¦å·çš„æ•°é‡
 strm.seekg (pe_header_offset+4+2+2+4+4);
 memset(buffer,0,64);
 strm.read (buffer, 4);
-//·­×ª
+//ç¿»è½¬
 memset(_tmnp_string,0,3);
 sprintf(_tmnp_string,"%02x",(unsigned char)buffer[3]);
 hex_sting = (char*)malloc(8+1);
@@ -504,15 +504,15 @@ sprintf(_tmnp_string,"%02x",(unsigned char)buffer[1]);
 strcat(hex_sting, _tmnp_string);
 sprintf(_tmnp_string,"%02x",(unsigned char)buffer[0]);
 strcat(hex_sting, _tmnp_string);
-time_stamp_umber_of_sections=(_ui)strtoul(hex_sting,NULL,16);//cout("machine type(´¦ÀíÆ÷)£º");
+time_stamp_umber_of_sections=(_ui)strtoul(hex_sting,NULL,16);//cout("machine type(å¤„ç†å™¨)ï¼š");
 free(hex_sting);
-cout("·ûºÅÊıÁ¿£¨symbol number)£º");printf("%d\n",time_stamp_umber_of_sections);
+cout("ç¬¦å·æ•°é‡ï¼ˆsymbol number)ï¼š");printf("%d\n",time_stamp_umber_of_sections);
 
-//ÔÙ¶ÁÈ¡2bytes»ñÈ¡optional headerµÄsize
+//å†è¯»å–2bytesè·å–optional headerçš„size
 strm.seekg (pe_header_offset+4+2+2+4+4+4);
 memset(buffer,0,64);
 strm.read (buffer, 2);
-//·­×ª
+//ç¿»è½¬
 memset(_tmnp_string,0,3);
 hex_sting = (char*)malloc(4+1);memset(hex_sting,0,4+1);
 sprintf(_tmnp_string,"%02x",(unsigned char)buffer[1]);
@@ -520,12 +520,12 @@ strcpy(hex_sting, _tmnp_string);
 sprintf(_tmnp_string,"%02x",(unsigned char)buffer[0]);
 strcat(hex_sting, _tmnp_string);
 acout(hex_sting);acout("\n");
-time_stamp_umber_of_sections=(_ui)strtoul(hex_sting,NULL,16);//cout("machine type(´¦ÀíÆ÷)£º");
+time_stamp_umber_of_sections=(_ui)strtoul(hex_sting,NULL,16);//cout("machine type(å¤„ç†å™¨)ï¼š");
 free(hex_sting);
-cout("optional header size£º");printf("%d\n",time_stamp_umber_of_sections);
+cout("optional header sizeï¼š");printf("%d\n",time_stamp_umber_of_sections);
 
-//ÔÙÈ»ºó¾ÍÊÇcharacteristic£¬¾ÍÊÇÒ»¶Ñ±êÖ¾Î»  2bytes
-//ÏÂÃæÊÇÍêÕûµÄcharacteristicÁĞ±í
+//å†ç„¶åå°±æ˜¯characteristicï¼Œå°±æ˜¯ä¸€å †æ ‡å¿—ä½  2bytes
+//ä¸‹é¢æ˜¯å®Œæ•´çš„characteristicåˆ—è¡¨
 /*
 Flag    Value   Description
 IMAGE_FILE_RELOCS_STRIPPED
@@ -536,7 +536,7 @@ IMAGE_FILE_EXECUTABLE_IMAGE
 0x0002
 Image only. This indicates that the image file is valid and can be run. If this flag is not set, it indicates a linker error.
 IMAGE_FILE_LINE_NUMS_STRIPPED
-½öÊÊÓÃÓÚ
+ä»…é€‚ç”¨äº
 
 0x0004
 COFF line numbers have been removed. This flag is deprecated and should be zero.
@@ -596,11 +596,11 @@ characteritics_flags_machine_type_my_map.insert(std::pair<_ui,motherfucker_strin
 characteritics_flags_machine_type_my_map.insert(std::pair<_ui,motherfucker_string>(0x0200,_TEXT("Debugging information is removed from the image file.")));
 characteritics_flags_machine_type_my_map.insert(std::pair<_ui,motherfucker_string>(0x0100,_TEXT("Machine is based on a 32-bit-word architecture.")));
 characteritics_flags_machine_type_my_map.insert(std::pair<_ui,motherfucker_string>(0x0001,_TEXT("Image only, Windows CE, and Microsoft Windows NT and later. This indicates that the file does not contain base relocations and must therefore be loaded at its preferred base address. If the base address is not available, the loader reports an error. The default behavior of the linker is to strip base relocations from executable (EXE) files.")));
-characteritics_flags_machine_type_my_map.insert(std::pair<_ui,motherfucker_string>(0x0002,_TEXT("cao²İÄãÂèÂğImage only. This indicates that the image file is valid and can be run. If this flag is not set, it indicates a linker error.½öÊÊÓÃÓÚ¾µÏñÎÄ¼ş£¬Õâ¸ö±êÖ¾Î»±íÃ÷ÁË¸Ã¾µÏñÎÄ¼şÊÇºÏ·¨µÄ£¬¿ÉÒÔÕı³£ÔËĞĞ£¬Èç¹ûÕâ¸ö±êÖ¾Î»Ã»ÓĞÆôÓÃ£¬ÔòËµÃ÷´æÔÚÁ´½ÓÆ÷´íÎó")));
+characteritics_flags_machine_type_my_map.insert(std::pair<_ui,motherfucker_string>(0x0002,_TEXT("caoè‰ä½ å¦ˆå—Image only. This indicates that the image file is valid and can be run. If this flag is not set, it indicates a linker error.ä»…é€‚ç”¨äºé•œåƒæ–‡ä»¶ï¼Œè¿™ä¸ªæ ‡å¿—ä½è¡¨æ˜äº†è¯¥é•œåƒæ–‡ä»¶æ˜¯åˆæ³•çš„ï¼Œå¯ä»¥æ­£å¸¸è¿è¡Œï¼Œå¦‚æœè¿™ä¸ªæ ‡å¿—ä½æ²¡æœ‰å¯ç”¨ï¼Œåˆ™è¯´æ˜å­˜åœ¨é“¾æ¥å™¨é”™è¯¯")));
 characteritics_flags_machine_type_my_map.insert(std::pair<_ui,motherfucker_string>(0x0004,_TEXT("COFF line numbers have been removed. This flag is deprecated and should be zero.")));
 characteritics_flags_machine_type_my_map.insert(std::pair<_ui,motherfucker_string>(0x0008,_TEXT("COFF symbol table entries for local symbols have been removed. This flag is deprecated and should be zero.")));
 characteritics_flags_machine_type_my_map.insert(std::pair<_ui,motherfucker_string>(0x0010,_TEXT("Obsolete. Aggressively trim working set. This flag is deprecated for Windows 2000 and later and must be zero.")));
-characteritics_flags_machine_type_my_map.insert(std::pair<_ui,motherfucker_string>(0x0020,_TEXT("Application can handle > 2-GB addresses.´Ë³ÌĞòÄÜ¹»´¦Àí>2GBµÄµØÖ·")));
+characteritics_flags_machine_type_my_map.insert(std::pair<_ui,motherfucker_string>(0x0020,_TEXT("Application can handle > 2-GB addresses.æ­¤ç¨‹åºèƒ½å¤Ÿå¤„ç†>2GBçš„åœ°å€")));
 //IMAGE_FILE_BYTES_REVERSED_LO
 characteritics_flags_machine_type_my_map.insert(std::pair<_ui,motherfucker_string>(0x0040,_TEXT("This flag is reserved for future use.")));
 characteritics_flags_machine_type_my_map.insert(std::pair<_ui,motherfucker_string>(0x0080,_TEXT("Little endian: the least significant bit (LSB) precedes the most significant bit (MSB) in memory. This flag is deprecated and should be zero.")));
@@ -609,7 +609,7 @@ characteritics_flags_machine_type_my_map.insert(std::pair<_ui,motherfucker_strin
 strm.seekg (pe_header_offset+4+2+2+4+4+4+2);
 memset(buffer,0,64);
 strm.read (buffer, 2);
-//·­×ª
+//ç¿»è½¬
 memset(_tmnp_string,0,3);
 hex_sting = (char*)malloc(4+1);memset(hex_sting,0,4+1);
 sprintf(_tmnp_string,"%02x",(unsigned char)buffer[1]);
@@ -617,10 +617,10 @@ strcpy(hex_sting, _tmnp_string);
 sprintf(_tmnp_string,"%02x",(unsigned char)buffer[0]);
 strcat(hex_sting, _tmnp_string);
 acout(hex_sting);acout("\n");
-time_stamp_umber_of_sections=(_ui)strtoul(hex_sting,NULL,16);//cout("machine type(´¦ÀíÆ÷)£º");
+time_stamp_umber_of_sections=(_ui)strtoul(hex_sting,NULL,16);//cout("machine type(å¤„ç†å™¨)ï¼š");
 free(hex_sting);
-cout("characteristic value£º");printf("%d\n",time_stamp_umber_of_sections);
-cout("ÏÂÃæÊä³öÆôÓÃÁËµÄ±êÖ¾Î»£º\n");
+cout("characteristic valueï¼š");printf("%d\n",time_stamp_umber_of_sections);
+cout("ä¸‹é¢è¾“å‡ºå¯ç”¨äº†çš„æ ‡å¿—ä½ï¼š\n");
 std::map<_ui, motherfucker_string>::iterator iter;
     iter = characteritics_flags_machine_type_my_map.begin();
     while(iter != characteritics_flags_machine_type_my_map.end()) {
@@ -628,33 +628,33 @@ std::map<_ui, motherfucker_string>::iterator iter;
             _ui fuckyou=time_stamp_umber_of_sections&(iter->first);
 //    printf("and op %u\n",fuckyou==0);
         if(fuckyou>0){
-//            cout("½øÀ´ÁË\n");
+//            cout("è¿›æ¥äº†\n");
            acout("\t");pout(iter->second);acout("\n");
         }
         iter++;
     }
 
-//    ºÃÁË£¬ÕâĞ©¶¼¶ÁÈ¡Íê±Ïºó£¬¾Í¸Ã¶ÁÈ¡optional headerÁË
+//    å¥½äº†ï¼Œè¿™äº›éƒ½è¯»å–å®Œæ¯•åï¼Œå°±è¯¥è¯»å–optional headeräº†
 
-//Ç°ÃæÎÒÃÇÒÑ¾­»ñÈ¡µ½ÁËoptional header µÄ´óĞ¡
-//ÔÚ¶ÁÈ¡ÍêÉÏÃæµÄcoff headerÖ®ºó£¬optional header¾ÍÊÇ½ô°¤×ÅµÄ
+//å‰é¢æˆ‘ä»¬å·²ç»è·å–åˆ°äº†optional header çš„å¤§å°
+//åœ¨è¯»å–å®Œä¸Šé¢çš„coff headerä¹‹åï¼Œoptional headerå°±æ˜¯ç´§æŒ¨ç€çš„
 
-//¸ù¾İÕâ¸ösvgÉÏµÄËµÃ÷¡£optional header¿ÉÒÔ±»·ÖÎªÈı²¿·Ö
+//æ ¹æ®è¿™ä¸ªsvgä¸Šçš„è¯´æ˜ã€‚optional headerå¯ä»¥è¢«åˆ†ä¸ºä¸‰éƒ¨åˆ†
 //OptionalHeaderStd           std
 //OptionalHeaderWindows           widnows
 //OptionalHeaderDataDirs          datadirectory
-//ÖÁÓÚÎªÊ²Ã´»á·Ö³ÉÈı²¿·Ö£¬ÔÚ¹Ù·½ÎÄµµhttps://docs.microsoft.com/en-us/windows/win32/debug/pe-formatÍøÒ³ÖĞ
- //    ctrl+fËÑË÷The optional header itself has three major parts.¾Í»áÕÒµ½´ğ°¸
-//ÎÒÃÇÏÈÀ´½âÎöstd²¿·Ö
-//Á½¸ö×Ö½ÚµÄformat
-cout("\n£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿¿ªÊ¼----OPTIONAL HEADER----¿ªÊ¼£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿");acout("\n");
-cout("==================================¿ªÊ¼----STD²¿·Ö----¿ªÊ¼==================================");acout("\n");
-//2bytesµÄformat£¬ÔÚPEbearÖĞformat¶ÔÓ¦µÄÊÇmagic£¬ÕâÀïÎÒÃÇºÍpebear±£³ÖÒ»ÖÂ  ±Ï¾¹PEbearÊÇ¸öÏà¶ÔÖªÃûµÄ¹¤¾ß
-// ÔÚ¹Ù·½ÎÄµµÖĞÒ²ÊÇ³Æ×÷magic£¬¶ø²»ÊÇformat
+//è‡³äºä¸ºä»€ä¹ˆä¼šåˆ†æˆä¸‰éƒ¨åˆ†ï¼Œåœ¨å®˜æ–¹æ–‡æ¡£https://docs.microsoft.com/en-us/windows/win32/debug/pe-formatç½‘é¡µä¸­
+ //    ctrl+fæœç´¢The optional header itself has three major parts.å°±ä¼šæ‰¾åˆ°ç­”æ¡ˆ
+//æˆ‘ä»¬å…ˆæ¥è§£æstdéƒ¨åˆ†
+//ä¸¤ä¸ªå­—èŠ‚çš„format
+cout("\nï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿå¼€å§‹----OPTIONAL HEADER----å¼€å§‹ï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿ");acout("\n");
+cout("==================================å¼€å§‹----STDéƒ¨åˆ†----å¼€å§‹==================================");acout("\n");
+//2bytesçš„formatï¼Œåœ¨PEbearä¸­formatå¯¹åº”çš„æ˜¯magicï¼Œè¿™é‡Œæˆ‘ä»¬å’Œpebearä¿æŒä¸€è‡´  æ¯•ç«ŸPEbearæ˜¯ä¸ªç›¸å¯¹çŸ¥åçš„å·¥å…·
+// åœ¨å®˜æ–¹æ–‡æ¡£ä¸­ä¹Ÿæ˜¯ç§°ä½œmagicï¼Œè€Œä¸æ˜¯format
 strm.seekg (pe_header_offset+4+2+2+4+4+4+2+2);
 memset(buffer,0,64);
 strm.read (buffer, 2);
-//·­×ª
+//ç¿»è½¬
 memset(_tmnp_string,0,3);
 hex_sting = (char*)malloc(4+1);memset(hex_sting,0,4+1);
 sprintf(_tmnp_string,"%02x",(unsigned char)buffer[1]);
@@ -662,39 +662,39 @@ strcpy(hex_sting, _tmnp_string);
 sprintf(_tmnp_string,"%02x",(unsigned char)buffer[0]);
 strcat(hex_sting, _tmnp_string);
 acout(hex_sting);acout("\n");
-time_stamp_umber_of_sections=(_ui)strtoul(hex_sting,NULL,16);//cout("machine type(´¦ÀíÆ÷)£º");
+time_stamp_umber_of_sections=(_ui)strtoul(hex_sting,NULL,16);//cout("machine type(å¤„ç†å™¨)ï¼š");
 free(hex_sting);
-//ÔÚÎ¢Èí¹Ù·½ÎÄµµÖĞ£¬magicµÄÖµÒ»¹²¾ÍÁ©0x10b¶ÔÓ¦32bit  0x20b¶ÔÓ¦64bit
-//Õâ¸öÖµµÄÓÅÏÈ¼¶±Èmachine typeÒª¸ß£¬Èç¹ûÁ½Õß³öÏÖÃ¬¶Ü£¬ÔòÒÔmagicµÄÖµÎª×¼£¬²»¹ıÕı³£Çé¿öÏÂÁ½ÕßÓ¦¸ÃÊÇÒ»ÖÂµÄ
-cout("magic£º");
+//åœ¨å¾®è½¯å®˜æ–¹æ–‡æ¡£ä¸­ï¼Œmagicçš„å€¼ä¸€å…±å°±ä¿©0x10bå¯¹åº”32bit  0x20bå¯¹åº”64bit
+//è¿™ä¸ªå€¼çš„ä¼˜å…ˆçº§æ¯”machine typeè¦é«˜ï¼Œå¦‚æœä¸¤è€…å‡ºç°çŸ›ç›¾ï¼Œåˆ™ä»¥magicçš„å€¼ä¸ºå‡†ï¼Œä¸è¿‡æ­£å¸¸æƒ…å†µä¸‹ä¸¤è€…åº”è¯¥æ˜¯ä¸€è‡´çš„
+cout("magicï¼š");
 _ui magic_numberrr = time_stamp_umber_of_sections;
 if(time_stamp_umber_of_sections==0x10b)
-    cout("PE32£¬Ò²¾ÍÊÇ32Î»");
+    cout("PE32ï¼Œä¹Ÿå°±æ˜¯32ä½");
 if(time_stamp_umber_of_sections==0x20b)
-    cout("PE32+£¬Ò²¾ÍÊÇ64Î»");
+    cout("PE32+ï¼Œä¹Ÿå°±æ˜¯64ä½");
 cout("\n");
-//È»ºóÊÇmajor linker versionºÍminor linker version
-//²»ÖªµÀÕâÁ½¸ö¶«Î÷ÓĞÉ¶ÓÃ
+//ç„¶åæ˜¯major linker versionå’Œminor linker version
+//ä¸çŸ¥é“è¿™ä¸¤ä¸ªä¸œè¥¿æœ‰å•¥ç”¨
 strm.seekg (pe_header_offset+4+2+2+4+4+4+2+2+2);
 memset(buffer,0,64);
 strm.read (buffer, 2);
-//·­×ª
+//ç¿»è½¬
 memset(_tmnp_string,0,3);
 hex_sting = (char*)malloc(4+1);memset(hex_sting,0,4+1);
 sprintf(_tmnp_string,"%02x",(unsigned char)buffer[0]);
 time_stamp_umber_of_sections=(_ui)strtoul(_tmnp_string,NULL,16);
-cout("Á´½ÓÆ÷Ö÷°æ±¾ºÅ£º");acout(time_stamp_umber_of_sections);acout("\n");
+cout("é“¾æ¥å™¨ä¸»ç‰ˆæœ¬å·ï¼š");acout(time_stamp_umber_of_sections);acout("\n");
 strcpy(hex_sting, _tmnp_string);
 sprintf(_tmnp_string,"%02x",(unsigned char)buffer[1]);
 time_stamp_umber_of_sections=(_ui)strtoul(_tmnp_string,NULL,16);
-cout("Á´½ÓÆ÷´Î°æ±¾ºÅ£º");acout(time_stamp_umber_of_sections);acout("\n");
+cout("é“¾æ¥å™¨æ¬¡ç‰ˆæœ¬å·ï¼š");acout(time_stamp_umber_of_sections);acout("\n");
 free(hex_sting);
 
-//È»ºóÊÇsize_of_code£¬¾ÍÊÇPEÎÄ¼şÖĞ´úÂëµÄ´óĞ¡ 4bytes
+//ç„¶åæ˜¯size_of_codeï¼Œå°±æ˜¯PEæ–‡ä»¶ä¸­ä»£ç çš„å¤§å° 4bytes
 strm.seekg (pe_header_offset+4+2+2+4+4+4+2+2+2+2);
 memset(buffer,0,64);
 strm.read (buffer, 4);
-//·­×ª
+//ç¿»è½¬
 memset(_tmnp_string,0,3);
 hex_sting = (char*)malloc(8+1);
 
@@ -709,10 +709,10 @@ sprintf(_tmnp_string,"%02x",(unsigned char)buffer[0]);
 strcat(hex_sting, _tmnp_string);
 time_stamp_umber_of_sections=(_ui)strtoul(hex_sting,NULL,16);
 free(hex_sting);
-cout("PEÎÄ¼şÖĞ.textÉÈÇøµÄ´óĞ¡£º");
+cout("PEæ–‡ä»¶ä¸­.textæ‰‡åŒºçš„å¤§å°ï¼š");
 acout(time_stamp_umber_of_sections);acout(" bytes\n");
 
-//size_of_initialized_data£¬ÆäÊµ¾ÍÊÇ.dataÉÈÇø
+//size_of_initialized_dataï¼Œå…¶å®å°±æ˜¯.dataæ‰‡åŒº
 strm.seekg (pe_header_offset+4+2+2+4+4+4+2+2+2+2+4);
 memset(buffer,0,64);
 FUCK("read return value %d\n",strm.read (buffer, 4));
@@ -728,15 +728,15 @@ FUCK("buffer %d\n",buffer[0]);
 // qnmd;
 time_stamp_umber_of_sections=_4_bytes_deal(buffer);
 
-cout("PEÎÄ¼şÖĞ.dataÉÈÇøµÄ´óĞ¡£º");
+cout("PEæ–‡ä»¶ä¸­.dataæ‰‡åŒºçš„å¤§å°ï¼š");
 acout(time_stamp_umber_of_sections);acout(" bytes\n");
 qnmd;
 
-//size_of_uninitialized_data£¬ÆäÊµ¾ÍÊÇ.bssÉÈÇø
+//size_of_uninitialized_dataï¼Œå…¶å®å°±æ˜¯.bssæ‰‡åŒº
 strm.seekg (pe_header_offset+4+2+2+4+4+4+2+2+2+2+4+4);
 memset(buffer,0,64);
 strm.read (buffer, 4);
-//·­×ª
+//ç¿»è½¬
 memset(_tmnp_string,0,3);
 hex_sting = (char*)malloc(8+1);
 
@@ -751,15 +751,15 @@ sprintf(_tmnp_string,"%02x",(unsigned char)buffer[0]);
 strcat(hex_sting, _tmnp_string);
 time_stamp_umber_of_sections=(_ui)strtoul(hex_sting,NULL,16);
 free(hex_sting);
-cout("PEÎÄ¼şÖĞ.bssÉÈÇøµÄ´óĞ¡£º");
+cout("PEæ–‡ä»¶ä¸­.bssæ‰‡åŒºçš„å¤§å°ï¼š");
 acout(time_stamp_umber_of_sections);acout(" bytes\n");
 
-//È»ºóÊÇentrypoint   address_of_entry_point  4bytes
-//Õâ¸öÊÇÒ»¸öÏà¶ÔµØÖ·£¬¾ÍÊÇÏà¶ÔÓÚ¾µÏñÎÄ¼ş¼ÓÔØµ½ÄÚ´æÖ®ºóµÄimage baseµÄÆ«ÒÆÁ¿
+//ç„¶åæ˜¯entrypoint   address_of_entry_point  4bytes
+//è¿™ä¸ªæ˜¯ä¸€ä¸ªç›¸å¯¹åœ°å€ï¼Œå°±æ˜¯ç›¸å¯¹äºé•œåƒæ–‡ä»¶åŠ è½½åˆ°å†…å­˜ä¹‹åçš„image baseçš„åç§»é‡
 strm.seekg (pe_header_offset+4+2+2+4+4+4+2+2+2+2+4+4+4);
 memset(buffer,0,64);
 strm.read (buffer, 4);
-//·­×ª
+//ç¿»è½¬
 memset(_tmnp_string,0,3);
 hex_sting = (char*)malloc(8+1);
 
@@ -774,15 +774,15 @@ sprintf(_tmnp_string,"%02x",(unsigned char)buffer[0]);
 strcat(hex_sting, _tmnp_string);
 time_stamp_umber_of_sections=(_ui)strtoul(hex_sting,NULL,16);
 free(hex_sting);
-cout("entry point£¨RVA£©µØÖ·£º");
+cout("entry pointï¼ˆRVAï¼‰åœ°å€ï¼š");
 printf("0x%08x",time_stamp_umber_of_sections);acout("\n");
 
-//È»ºóÊÇbase_of_code£¬4bytes
-// codeÉÈÇøÏà¶ÔÓÚ¾µÏñÎÄ¼ş¼ÓÔØÈçÄÚ´æºóimage baseµÄRVA
+//ç„¶åæ˜¯base_of_codeï¼Œ4bytes
+// codeæ‰‡åŒºç›¸å¯¹äºé•œåƒæ–‡ä»¶åŠ è½½å¦‚å†…å­˜åimage baseçš„RVA
 strm.seekg (pe_header_offset+4+2+2+4+4+4+2+2+2+2+4+4+4+4);
 memset(buffer,0,64);
 strm.read (buffer, 4);
-//·­×ª
+//ç¿»è½¬
 memset(_tmnp_string,0,3);
 hex_sting = (char*)malloc(8+1);
 
@@ -797,11 +797,11 @@ sprintf(_tmnp_string,"%02x",(unsigned char)buffer[0]);
 strcat(hex_sting, _tmnp_string);
 time_stamp_umber_of_sections=(_ui)strtoul(hex_sting,NULL,16);
 free(hex_sting);
-cout("base of code£¨RVA£©µØÖ·£º");
+cout("base of codeï¼ˆRVAï¼‰åœ°å€ï¼š");
 printf("0x%08x",time_stamp_umber_of_sections);acout("\n");
 
-//Èç¹ûmagicµÄÖµÊÇpe32£¬ÄÇÃ´ÔÚbase of codeÖ®ºó£¬»¹ÓĞÒ»¸öbase of data
-//dataÉÈÇøÏà¶ÔÓÚimage baseµÄRVA
+//å¦‚æœmagicçš„å€¼æ˜¯pe32ï¼Œé‚£ä¹ˆåœ¨base of codeä¹‹åï¼Œè¿˜æœ‰ä¸€ä¸ªbase of data
+//dataæ‰‡åŒºç›¸å¯¹äºimage baseçš„RVA
 _ui seek_offset  = 0;
 _ui image_bse_sizeof  = 8;
 if(magic_numberrr==0x10b){
@@ -810,7 +810,7 @@ if(magic_numberrr==0x10b){
     strm.seekg (pe_header_offset+4+2+2+4+4+4+2+2+2+2+4+4+4+4+4);
 memset(buffer,0,64);
 strm.read (buffer, 4);
-//·­×ª
+//ç¿»è½¬
 memset(_tmnp_string,0,3);
 hex_sting = (char*)malloc(8+1);
 
@@ -825,30 +825,30 @@ sprintf(_tmnp_string,"%02x",(unsigned char)buffer[0]);
 strcat(hex_sting, _tmnp_string);
 time_stamp_umber_of_sections=(_ui)strtoul(hex_sting,NULL,16);
 free(hex_sting);
-cout("base of data£¨RVA£©µØÖ·£º");
+cout("base of dataï¼ˆRVAï¼‰åœ°å€ï¼š");
 printf("0x%08x",time_stamp_umber_of_sections);acout("\n");
 }
-//µ½ÕâÀï£¬std²¿·Ö¾ÍËãÊÇ½áÊøÁË
-cout("\n==================================½áÊø----STD²¿·Ö----½áÊø==================================");acout("\n");
+//åˆ°è¿™é‡Œï¼Œstdéƒ¨åˆ†å°±ç®—æ˜¯ç»“æŸäº†
+cout("\n==================================ç»“æŸ----STDéƒ¨åˆ†----ç»“æŸ==================================");acout("\n");
 
 
 
-cout("\n==================================¿ªÊ¼----windows²¿·Ö----¿ªÊ¼==================================");acout("\n");
+cout("\n==================================å¼€å§‹----windowséƒ¨åˆ†----å¼€å§‹==================================");acout("\n");
 
 
-////image base,Õâ¸öÊÇpeÎÄ¼ş¼ÓÔØÈëÄÚ´æµÄÊ×Ñ¡µØÖ·£¬Ä¬ÈÏÊÇ0x00400000
-//µ«ÊÇÓÉÓÚASLR»úÖÆµÄ´æÔÚ£¬Õâ¸öµØÖ·´ó²¿·ÖÇé¿öÏÂ¶¼²»»á±»Ó¦ÓÃ£¬ÒòÎª¿ÉÄÜÒÑ¾­±»±ğµÄ³ÌĞò¸øÕ¼ÁË
-//µÚÒ»¸öµØ·½¾ÍĞèÒªÇø·Öpe32ºÍpe32+£¬pe32Ö»Õ¼ÓÃ4bytes£¬pe32+Õ¼ÓÃ8bytes
-//ÎÒÃÇÊ¹ÓÃÉÏÃæ¶¨ÒåµÄimage_bse_sizeof
+////image base,è¿™ä¸ªæ˜¯peæ–‡ä»¶åŠ è½½å…¥å†…å­˜çš„é¦–é€‰åœ°å€ï¼Œé»˜è®¤æ˜¯0x00400000
+//ä½†æ˜¯ç”±äºASLRæœºåˆ¶çš„å­˜åœ¨ï¼Œè¿™ä¸ªåœ°å€å¤§éƒ¨åˆ†æƒ…å†µä¸‹éƒ½ä¸ä¼šè¢«åº”ç”¨ï¼Œå› ä¸ºå¯èƒ½å·²ç»è¢«åˆ«çš„ç¨‹åºç»™å äº†
+//ç¬¬ä¸€ä¸ªåœ°æ–¹å°±éœ€è¦åŒºåˆ†pe32å’Œpe32+ï¼Œpe32åªå ç”¨4bytesï¼Œpe32+å ç”¨8bytes
+//æˆ‘ä»¬ä½¿ç”¨ä¸Šé¢å®šä¹‰çš„image_bse_sizeof
 strm.seekg (pe_header_offset+4+2+2+4+4+4+2+2+2+2+4+4+4+4+4+seek_offset);
 memset(buffer,0,64);
 strm.read (buffer, image_bse_sizeof);
-//·­×ª
+//ç¿»è½¬
 memset(_tmnp_string,0,3);
 
 
 if(image_bse_sizeof==8) {
-//        cout("ÄãÊÇ64Î»¶Ô°É£¿\n");
+//        cout("ä½ æ˜¯64ä½å¯¹å§ï¼Ÿ\n");
        unsigned __int64 time_stamp_umber_of_sections2=0;
            hex_sting = (char*)malloc(8+1);
 sprintf(_tmnp_string,"%02x",(unsigned char)buffer[3]);
@@ -859,12 +859,12 @@ sprintf(_tmnp_string,"%02x",(unsigned char)buffer[1]);
 strcat(hex_sting, _tmnp_string);
 sprintf(_tmnp_string,"%02x",(unsigned char)buffer[0]);
 strcat(hex_sting, _tmnp_string);
-//cout("16½øÖÆ×Ö·û´®");
+//cout("16è¿›åˆ¶å­—ç¬¦ä¸²");
 //pout(hex_sting);
 //cout("\n");
 
 time_stamp_umber_of_sections=(_ui)strtoul(hex_sting,NULL,16);
-// cout("µÍ16bit");
+// cout("ä½16bit");
 
 free(hex_sting);
 //printf("0x%x\n", time_stamp_umber_of_sections);
@@ -877,7 +877,7 @@ sprintf(_tmnp_string,"%02x",(unsigned char)buffer[5]);
 strcat(hex_sting, _tmnp_string);
 sprintf(_tmnp_string,"%02x",(unsigned char)buffer[4]);
 strcat(hex_sting, _tmnp_string);
-//cout("16½øÖÆ×Ö·û´®");
+//cout("16è¿›åˆ¶å­—ç¬¦ä¸²");
 //pout(hex_sting);
 //cout("\n");
 time_stamp_umber_of_sections2=(_ul long)strtoul(hex_sting,NULL,16);
@@ -890,12 +890,12 @@ free(hex_sting);
 //time_stamp_umber_of_sections2=time_stamp_umber_of_sections2<<32;
 //printf("%ull\n\n",time_stamp_umber_of_sections2);
 //time_stamp_umber_of_sections2=(unsigned __int64);
-cout("image baseµØÖ·£º");
+cout("image baseåœ°å€ï¼š");
 //std::cout<<sizeof(_strtoui64(hex_sting,NULL,16))<<std::endl;
-//ÎÒÖªµÀÎªÊ²Ã´ÕâÀïÎÒµÄ64bitµÄ±äÁ¿×ÜÊÇ»á¶ªÆúÒ»°ãµÄÊı¾İ±à³Ì32bitÁË
-//ÒòÎªÎÒÃÇÓÃµÄÊÇ32bitµÄ±àÒëÆ÷£¬ĞèÒªĞŞ¸ÄÒ»ÏÂbuild oiptionsÀïÃæµÄpre step£¬»·¾³±äÁ¿½Å±¾Ó¦¸ÃÊÇ¡¢
+//æˆ‘çŸ¥é“ä¸ºä»€ä¹ˆè¿™é‡Œæˆ‘çš„64bitçš„å˜é‡æ€»æ˜¯ä¼šä¸¢å¼ƒä¸€èˆ¬çš„æ•°æ®ç¼–ç¨‹32bitäº†
+//å› ä¸ºæˆ‘ä»¬ç”¨çš„æ˜¯32bitçš„ç¼–è¯‘å™¨ï¼Œéœ€è¦ä¿®æ”¹ä¸€ä¸‹build oiptionsé‡Œé¢çš„pre stepï¼Œç¯å¢ƒå˜é‡è„šæœ¬åº”è¯¥æ˜¯ã€
 //C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\amd64\vcvars64.bat
-// ÎÒµÄÕâ¸ö±àÒëÆ÷¿ÉÄÜ¾Í²»Ö§³Ö64bitµÄÕûÊı£¬ÎÒ·ÅÆúÁË£¬·Ö¿ªÏÔÊ¾ËãÁË
+// æˆ‘çš„è¿™ä¸ªç¼–è¯‘å™¨å¯èƒ½å°±ä¸æ”¯æŒ64bitçš„æ•´æ•°ï¼Œæˆ‘æ”¾å¼ƒäº†ï¼Œåˆ†å¼€æ˜¾ç¤ºç®—äº†
 printf("0x%x",time_stamp_umber_of_sections2);printf("%08x",time_stamp_umber_of_sections);acout("\n");
 }else{
 
@@ -910,21 +910,21 @@ sprintf(_tmnp_string,"%02x",(unsigned char)buffer[0]);
 strcat(hex_sting, _tmnp_string);
 time_stamp_umber_of_sections=(_ui)strtoul(hex_sting,NULL,16);
 free(hex_sting);
-cout("image baseµØÖ·£º");
+cout("image baseåœ°å€ï¼š");
 printf("0x%08x",time_stamp_umber_of_sections);acout("\n");
 }
-//È»ºóÊÇsection_alignment  4bytes
-// Õâ¸ö¾ÍÊÇÔÚ¼ÓÔØÈëÄÚ´æÖ®ºó£¬¸ø¸÷¸öÉÈÇø¶ÔÆëÓÃµÄ£¬Ò»°ãÇé¿öÏÂ£¬ËûµÄÖµ¾ÍÊÇµ±Ç°´¦ÀíÆ÷¼Ü¹¹µÄÒ»¸öpageµÄ´óĞ¡
-//pageÊÇÄÚ´æ·ÖÒ³Ïà¹Ø¼¼Êõ
+//ç„¶åæ˜¯section_alignment  4bytes
+// è¿™ä¸ªå°±æ˜¯åœ¨åŠ è½½å…¥å†…å­˜ä¹‹åï¼Œç»™å„ä¸ªæ‰‡åŒºå¯¹é½ç”¨çš„ï¼Œä¸€èˆ¬æƒ…å†µä¸‹ï¼Œä»–çš„å€¼å°±æ˜¯å½“å‰å¤„ç†å™¨æ¶æ„çš„ä¸€ä¸ªpageçš„å¤§å°
+//pageæ˜¯å†…å­˜åˆ†é¡µç›¸å…³æŠ€æœ¯
 strm.seekg (pe_header_offset+4+2+2+4+4+4+2+2+2+2+4+4+4+4+4+seek_offset+image_bse_sizeof);
 memset(buffer,0,64);
 strm.read (buffer, 4);
-//·­×ª
+//ç¿»è½¬
 memset(_tmnp_string,0,3);
 
 
 
-//        cout("ÄãÊÇ64Î»¶Ô°É£¿\n");
+//        cout("ä½ æ˜¯64ä½å¯¹å§ï¼Ÿ\n");
       
            hex_sting = (char*)malloc(8+1);
 sprintf(_tmnp_string,"%02x",(unsigned char)buffer[3]);
@@ -937,20 +937,20 @@ sprintf(_tmnp_string,"%02x",(unsigned char)buffer[0]);
 strcat(hex_sting, _tmnp_string);
 time_stamp_umber_of_sections=(_ui)strtoul(hex_sting,NULL,16);
 free(hex_sting);
-cout("section_alignment£º");
+cout("section_alignmentï¼š");
 printf("%u bytes", time_stamp_umber_of_sections);
 cout("\n");
 
-// ÏÂÃæÊÇfile alignment£¬Ä¬ÈÏÖµÊÇ512  4bytes
+// ä¸‹é¢æ˜¯file alignmentï¼Œé»˜è®¤å€¼æ˜¯512  4bytes
 strm.seekg (pe_header_offset+4+2+2+4+4+4+2+2+2+2+4+4+4+4+4+seek_offset+image_bse_sizeof+4);
 memset(buffer,0,64);
 strm.read (buffer, 4);
-//·­×ª
+//ç¿»è½¬
 memset(_tmnp_string,0,3);
 
 
 
-//        cout("ÄãÊÇ64Î»¶Ô°É£¿\n");
+//        cout("ä½ æ˜¯64ä½å¯¹å§ï¼Ÿ\n");
       
            hex_sting = (char*)malloc(8+1);
 sprintf(_tmnp_string,"%02x",(unsigned char)buffer[3]);
@@ -963,20 +963,20 @@ sprintf(_tmnp_string,"%02x",(unsigned char)buffer[0]);
 strcat(hex_sting, _tmnp_string);
 time_stamp_umber_of_sections=(_ui)strtoul(hex_sting,NULL,16);
 free(hex_sting);
-cout("file _alignment£º");
+cout("file _alignmentï¼š");
 printf("%u bytes", time_stamp_umber_of_sections);
 cout("\n");
 
-// ÏÂÃæÊÇ²Ù×÷ÏµÍ³Ö÷°æ±¾ºÅ 2bytes
+// ä¸‹é¢æ˜¯æ“ä½œç³»ç»Ÿä¸»ç‰ˆæœ¬å· 2bytes
 strm.seekg (pe_header_offset+4+2+2+4+4+4+2+2+2+2+4+4+4+4+4+seek_offset+image_bse_sizeof+4+4);
 memset(buffer,0,64);
 strm.read (buffer, 2);
-//·­×ª
+//ç¿»è½¬
 memset(_tmnp_string,0,3);
 
 
 
-//        cout("ÄãÊÇ64Î»¶Ô°É£¿\n");
+//        cout("ä½ æ˜¯64ä½å¯¹å§ï¼Ÿ\n");
       
            hex_sting = (char*)malloc(8+1);
 sprintf(_tmnp_string,"%02x",(unsigned char)buffer[1]);
@@ -985,21 +985,21 @@ sprintf(_tmnp_string,"%02x",(unsigned char)buffer[0]);
 strcat(hex_sting, _tmnp_string);
 time_stamp_umber_of_sections=(_ui)strtoul(hex_sting,NULL,16);
 free(hex_sting);
-cout("²Ù×÷ÏµÍ³Ö÷°æ±¾ºÅ£º");
+cout("æ“ä½œç³»ç»Ÿä¸»ç‰ˆæœ¬å·ï¼š");
 printf("%u ", time_stamp_umber_of_sections);
 cout("\n");
 
 
-// ÏÂÃæÊÇ²Ù×÷ÏµÍ³´Î°æ±¾ºÅ 2bytes
+// ä¸‹é¢æ˜¯æ“ä½œç³»ç»Ÿæ¬¡ç‰ˆæœ¬å· 2bytes
 strm.seekg (pe_header_offset+4+2+2+4+4+4+2+2+2+2+4+4+4+4+4+seek_offset+image_bse_sizeof+4+4+2);
 memset(buffer,0,64);
 strm.read (buffer, 2);
-//·­×ª
+//ç¿»è½¬
 memset(_tmnp_string,0,3);
 
 
 
-//        cout("ÄãÊÇ64Î»¶Ô°É£¿\n");
+//        cout("ä½ æ˜¯64ä½å¯¹å§ï¼Ÿ\n");
       
            hex_sting = (char*)malloc(8+1);
 sprintf(_tmnp_string,"%02x",(unsigned char)buffer[1]);
@@ -1008,20 +1008,20 @@ sprintf(_tmnp_string,"%02x",(unsigned char)buffer[0]);
 strcat(hex_sting, _tmnp_string);
 time_stamp_umber_of_sections=(_ui)strtoul(hex_sting,NULL,16);
 free(hex_sting);
-cout("²Ù×÷ÏµÍ³´Î°æ±¾ºÅ£º");
+cout("æ“ä½œç³»ç»Ÿæ¬¡ç‰ˆæœ¬å·ï¼š");
 printf("%u ", time_stamp_umber_of_sections);
 cout("\n");
 
-// ¾µÏñÎÄ¼şÖì°æ±¾ºÅºÍ´Î°æ±¾ºÅ
+// é•œåƒæ–‡ä»¶æœ±ç‰ˆæœ¬å·å’Œæ¬¡ç‰ˆæœ¬å·
 strm.seekg (pe_header_offset+4+2+2+4+4+4+2+2+2+2+4+4+4+4+4+seek_offset+image_bse_sizeof+4+4+2+2);
 memset(buffer,0,64);
 strm.read (buffer, 4);
-//·­×ª
+//ç¿»è½¬
 memset(_tmnp_string,0,3);
 
 
 
-//        cout("ÄãÊÇ64Î»¶Ô°É£¿\n");
+//        cout("ä½ æ˜¯64ä½å¯¹å§ï¼Ÿ\n");
       
            hex_sting = (char*)malloc(8+1);
 sprintf(_tmnp_string,"%02x",(unsigned char)buffer[1]);
@@ -1030,7 +1030,7 @@ sprintf(_tmnp_string,"%02x",(unsigned char)buffer[0]);
 strcat(hex_sting, _tmnp_string);
 time_stamp_umber_of_sections=(_ui)strtoul(hex_sting,NULL,16);
 free(hex_sting);
-cout("¾µÏñÎÄ¼şÖ÷°æ±¾ºÅ£º");printf("%u ", time_stamp_umber_of_sections);
+cout("é•œåƒæ–‡ä»¶ä¸»ç‰ˆæœ¬å·ï¼š");printf("%u ", time_stamp_umber_of_sections);
 cout("\n");
 hex_sting = (char*)malloc(8+1);
 sprintf(_tmnp_string,"%02x",(unsigned char)buffer[3]);
@@ -1039,21 +1039,21 @@ sprintf(_tmnp_string,"%02x",(unsigned char)buffer[2]);
 strcat(hex_sting, _tmnp_string);
 time_stamp_umber_of_sections=(_ui)strtoul(hex_sting,NULL,16);
 free(hex_sting);
-cout("¾µÏñÎÄ¼ş´Î°æ±¾ºÅ£º");
+cout("é•œåƒæ–‡ä»¶æ¬¡ç‰ˆæœ¬å·ï¼š");
 printf("%u ", time_stamp_umber_of_sections);
 cout("\n");
 
 
-// ×ÓÏµÍ³µÄÖ÷°æ±¾ºÅºÍ´Î°æ±¾ºÅ
+// å­ç³»ç»Ÿçš„ä¸»ç‰ˆæœ¬å·å’Œæ¬¡ç‰ˆæœ¬å·
 strm.seekg (pe_header_offset+4+2+2+4+4+4+2+2+2+2+4+4+4+4+4+seek_offset+image_bse_sizeof+4+4+2+2+4);
 memset(buffer,0,64);
 strm.read (buffer, 4);
-//·­×ª
+//ç¿»è½¬
 memset(_tmnp_string,0,3);
 
 
 
-//        cout("ÄãÊÇ64Î»¶Ô°É£¿\n");
+//        cout("ä½ æ˜¯64ä½å¯¹å§ï¼Ÿ\n");
       
            hex_sting = (char*)malloc(8+1);
 sprintf(_tmnp_string,"%02x",(unsigned char)buffer[1]);
@@ -1062,7 +1062,7 @@ sprintf(_tmnp_string,"%02x",(unsigned char)buffer[0]);
 strcat(hex_sting, _tmnp_string);
 time_stamp_umber_of_sections=(_ui)strtoul(hex_sting,NULL,16);
 free(hex_sting);
-cout("×ÓÏµÍ³Ö÷°æ±¾ºÅ£º");printf("%u ", time_stamp_umber_of_sections);
+cout("å­ç³»ç»Ÿä¸»ç‰ˆæœ¬å·ï¼š");printf("%u ", time_stamp_umber_of_sections);
 cout("\n");
 hex_sting = (char*)malloc(8+1);
 sprintf(_tmnp_string,"%02x",(unsigned char)buffer[3]);
@@ -1071,27 +1071,27 @@ sprintf(_tmnp_string,"%02x",(unsigned char)buffer[2]);
 strcat(hex_sting, _tmnp_string);
 time_stamp_umber_of_sections=(_ui)strtoul(hex_sting,NULL,16);
 free(hex_sting);
-cout("×ÓÏµÍ³´Î°æ±¾ºÅ£º");
+cout("å­ç³»ç»Ÿæ¬¡ç‰ˆæœ¬å·ï¼š");
 printf("%u ", time_stamp_umber_of_sections);
 cout("\n");
 
-// ÔÙÍùÏÂ
-// win32_version_value  Õâ¸ö×Ö¶ÎÊÇ±£ÁôµÄ£¬Òò´ËÎÒÃÇÖ±½ÓÂÓ¹ı¼´¿É
+// å†å¾€ä¸‹
+// win32_version_value  è¿™ä¸ªå­—æ®µæ˜¯ä¿ç•™çš„ï¼Œå› æ­¤æˆ‘ä»¬ç›´æ¥æ è¿‡å³å¯
 strm.seekg (pe_header_offset+4+2+2+4+4+4+2+2+2+2+4+4+4+4+4+seek_offset+image_bse_sizeof+4+4+2+2+4+4);
 memset(buffer,0,64);
 strm.read (buffer, 4);
  
-// size_of_image  image¼ÓÔØÈëÄÚ´æÖ®ºóµÄ´óĞ¡£¬ÊÇfilealignmentµÄ±¶Êı  4bytes
-// Õâ¸öÊÇÄÚ´æ¶ÔÆëÖ®ºóµÄ´óĞ¡£¬ÊÇ±ÈÊµ¼ÊµÄimageÎÄ¼şÒª´óµÄ
+// size_of_image  imageåŠ è½½å…¥å†…å­˜ä¹‹åçš„å¤§å°ï¼Œæ˜¯filealignmentçš„å€æ•°  4bytes
+// è¿™ä¸ªæ˜¯å†…å­˜å¯¹é½ä¹‹åçš„å¤§å°ï¼Œæ˜¯æ¯”å®é™…çš„imageæ–‡ä»¶è¦å¤§çš„
 strm.seekg (pe_header_offset+4+2+2+4+4+4+2+2+2+2+4+4+4+4+4+seek_offset+image_bse_sizeof+4+4+2+2+4+4+4);
 memset(buffer,0,64);
 strm.read (buffer, 4);
-//·­×ª
+//ç¿»è½¬
 memset(_tmnp_string,0,3);
 
 
 
-//        cout("ÄãÊÇ64Î»¶Ô°É£¿\n");
+//        cout("ä½ æ˜¯64ä½å¯¹å§ï¼Ÿ\n");
       
            hex_sting = (char*)malloc(8+1);
 sprintf(_tmnp_string,"%02x",(unsigned char)buffer[3]);
@@ -1104,21 +1104,21 @@ sprintf(_tmnp_string,"%02x",(unsigned char)buffer[0]);
 strcat(hex_sting, _tmnp_string);
 time_stamp_umber_of_sections=(_ui)strtoul(hex_sting,NULL,16);
 free(hex_sting);
-cout("¾µÏñ¼ÓÔØµ½ÄÚ´æÖ®ºóµÄ´óĞ¡£º");printf("%u bytes", time_stamp_umber_of_sections);
+cout("é•œåƒåŠ è½½åˆ°å†…å­˜ä¹‹åçš„å¤§å°ï¼š");printf("%u bytes", time_stamp_umber_of_sections);
 cout("\n");
 
 
-// sizeofheader£¬ËùÓĞµÄÍ·²¿¼ÓÆğÀ´È»ºóÏòÉÏÈ¡Õûµ½file alignmentµÄ±¶Êı
+// sizeofheaderï¼Œæ‰€æœ‰çš„å¤´éƒ¨åŠ èµ·æ¥ç„¶åå‘ä¸Šå–æ•´åˆ°file alignmentçš„å€æ•°
 
 strm.seekg (pe_header_offset+4+2+2+4+4+4+2+2+2+2+4+4+4+4+4+seek_offset+image_bse_sizeof+4+4+2+2+4+4+4+4);
 memset(buffer,0,64);
 strm.read (buffer, 4);
-//·­×ª
+//ç¿»è½¬
 memset(_tmnp_string,0,3);
 
 
 
-//        cout("ÄãÊÇ64Î»¶Ô°É£¿\n");
+//        cout("ä½ æ˜¯64ä½å¯¹å§ï¼Ÿ\n");
       
            hex_sting = (char*)malloc(8+1);
 sprintf(_tmnp_string,"%02x",(unsigned char)buffer[3]);
@@ -1131,22 +1131,22 @@ sprintf(_tmnp_string,"%02x",(unsigned char)buffer[0]);
 strcat(hex_sting, _tmnp_string);
 time_stamp_umber_of_sections=(_ui)strtoul(hex_sting,NULL,16);
 free(hex_sting);
-cout("header×Ü´óĞ¡£¨ÏòÉÏÈ¡Õûfilealignment£©£º");printf("%u bytes", time_stamp_umber_of_sections);
+cout("headeræ€»å¤§å°ï¼ˆå‘ä¸Šå–æ•´filealignmentï¼‰ï¼š");printf("%u bytes", time_stamp_umber_of_sections);
 cout("\n");
 
 
-// check_sum  ¾µÏñÎÄ¼şµÄĞ£ÑéºÍ
-// ¸ÃĞ£ÑéºÍµÄ¼ÆËãËã·¨Î»ÓÚIMAGHELP.DLL.
+// check_sum  é•œåƒæ–‡ä»¶çš„æ ¡éªŒå’Œ
+// è¯¥æ ¡éªŒå’Œçš„è®¡ç®—ç®—æ³•ä½äºIMAGHELP.DLL.
 
 strm.seekg (pe_header_offset+4+2+2+4+4+4+2+2+2+2+4+4+4+4+4+seek_offset+image_bse_sizeof+4+4+2+2+4+4+4+4+4);
 memset(buffer,0,64);
 strm.read (buffer, 4);
-//·­×ª
+//ç¿»è½¬
 memset(_tmnp_string,0,3);
 
 
 
-//        cout("ÄãÊÇ64Î»¶Ô°É£¿\n");
+//        cout("ä½ æ˜¯64ä½å¯¹å§ï¼Ÿ\n");
       
            hex_sting = (char*)malloc(8+1);
 sprintf(_tmnp_string,"%02x",(unsigned char)buffer[3]);
@@ -1159,16 +1159,16 @@ sprintf(_tmnp_string,"%02x",(unsigned char)buffer[0]);
 strcat(hex_sting, _tmnp_string);
 time_stamp_umber_of_sections=(_ui)strtoul(hex_sting,NULL,16);
 free(hex_sting);
-cout("checksum£º");printf("%u ", time_stamp_umber_of_sections);
+cout("checksumï¼š");printf("%u ", time_stamp_umber_of_sections);
 cout("\n");
 
-// 2bytesµÄ×ÓÏµÍ³£¬gui¡¢cliµÈ
-// Íê³ÉÁĞ±í
+// 2bytesçš„å­ç³»ç»Ÿï¼Œguiã€cliç­‰
+// å®Œæˆåˆ—è¡¨
 
 std::map<_ui, motherfucker_string> characteritics_flags_machine_sub_ssytem_type_my_map ;
-characteritics_flags_machine_sub_ssytem_type_my_map.insert(std::pair<_ui,motherfucker_string>(2,_TEXT("Í¼ĞÎ»¯×ÓÏµÍ³")));
-characteritics_flags_machine_sub_ssytem_type_my_map.insert(std::pair<_ui,motherfucker_string>(3,_TEXT("×Ö·û£¨ÃüÁîĞĞ£©×ÓÏµÍ³")));
-/*¡¢*
+characteritics_flags_machine_sub_ssytem_type_my_map.insert(std::pair<_ui,motherfucker_string>(2,_TEXT("å›¾å½¢åŒ–å­ç³»ç»Ÿ")));
+characteritics_flags_machine_sub_ssytem_type_my_map.insert(std::pair<_ui,motherfucker_string>(3,_TEXT("å­—ç¬¦ï¼ˆå‘½ä»¤è¡Œï¼‰å­ç³»ç»Ÿ")));
+/*ã€*
 Constant	Value	Description
 IMAGE_SUBSYSTEM_UNKNOWN
 0
@@ -1212,16 +1212,16 @@ XBOX
 IMAGE_SUBSYSTEM_WINDOWS_BOOT_APPLICATION
 16
 Windows boot application.
-*¡¢/*/
+*ã€/*/
 strm.seekg (pe_header_offset+4+2+2+4+4+4+2+2+2+2+4+4+4+4+4+seek_offset+image_bse_sizeof+4+4+2+2+4+4+4+4+4+4);
 memset(buffer,0,64);
 strm.read (buffer, 2);
-//·­×ª
+//ç¿»è½¬
 memset(_tmnp_string,0,3);
 
 
 
-//        cout("ÄãÊÇ64Î»¶Ô°É£¿\n");
+//        cout("ä½ æ˜¯64ä½å¯¹å§ï¼Ÿ\n");
       
            hex_sting = (char*)malloc(8+1);
 
@@ -1231,27 +1231,27 @@ sprintf(_tmnp_string,"%02x",(unsigned char)buffer[0]);
 strcat(hex_sting, _tmnp_string);
 time_stamp_umber_of_sections=(_ui)strtoul(hex_sting,NULL,16);
 free(hex_sting);
-cout("×ÓÏµÍ³£º");cout("\n");
+cout("å­ç³»ç»Ÿï¼š");cout("\n");
     iter = characteritics_flags_machine_sub_ssytem_type_my_map.begin();
     while(iter != characteritics_flags_machine_sub_ssytem_type_my_map.end()) {
 //            cout<<typeid(time_stamp_umber_of_sections&(iter->first)).name();
             _ui fuckyou=time_stamp_umber_of_sections==iter->first;
 //    printf("and op %u\n",fuckyou==0);
         if(fuckyou>0){
-//            cout("½øÀ´ÁË\n");
+//            cout("è¿›æ¥äº†\n");
            acout("\t");pout(iter->second);acout("\n");
         }
         iter++;
     }
 
 // dll_characteristics
-// Ò²ÊÇÒ»¶Ñflag
-// ÍêÕûÁĞ±íÈçÏÂ
+// ä¹Ÿæ˜¯ä¸€å †flag
+// å®Œæ•´åˆ—è¡¨å¦‚ä¸‹
 std::map<_ui, motherfucker_string> dll_characteristicscharacteritics_flags_machine_sub_ssytem_type_my_map ;
-dll_characteristicscharacteritics_flags_machine_sub_ssytem_type_my_map.insert(std::pair<_ui,motherfucker_string>(0x0040,_TEXT("DLL can be relocated at load time.DLLÔÚ¼ÓÔØµÄÊ±ºò¿ÉÒÔ±»ÖØĞÂ¶¨Î»")));
-dll_characteristicscharacteritics_flags_machine_sub_ssytem_type_my_map.insert(std::pair<_ui,motherfucker_string>(0x0100,_TEXT("Image is NX compatible¡£ NXÒâÎªno-executeÊÇÒ»ÖÖÄÚ´æ±£»¤´ëÊ©")));
-dll_characteristicscharacteritics_flags_machine_sub_ssytem_type_my_map.insert(std::pair<_ui,motherfucker_string>(0x4000,_TEXT("Image supports Control Flow Guard.¡£ ¼ò³ÆCFG£¬¿ÉÒÔÔÚcl±àÒëÑ¡ÔñÖĞÖ¸¶¨£¬ÓÃÓÚµÖ¿¹ÄÚ´æËğ»µÂ©¶´")));
-dll_characteristicscharacteritics_flags_machine_sub_ssytem_type_my_map.insert(std::pair<_ui,motherfucker_string>(0x8000,_TEXT("Terminal Server aware.ÎÒ²»ÖªµÀÕâ¸öµ½µ×ÊÇÊ²Ã´ÒâË¼")));
+dll_characteristicscharacteritics_flags_machine_sub_ssytem_type_my_map.insert(std::pair<_ui,motherfucker_string>(0x0040,_TEXT("DLL can be relocated at load time.DLLåœ¨åŠ è½½çš„æ—¶å€™å¯ä»¥è¢«é‡æ–°å®šä½")));
+dll_characteristicscharacteritics_flags_machine_sub_ssytem_type_my_map.insert(std::pair<_ui,motherfucker_string>(0x0100,_TEXT("Image is NX compatibleã€‚ NXæ„ä¸ºno-executeæ˜¯ä¸€ç§å†…å­˜ä¿æŠ¤æªæ–½")));
+dll_characteristicscharacteritics_flags_machine_sub_ssytem_type_my_map.insert(std::pair<_ui,motherfucker_string>(0x4000,_TEXT("Image supports Control Flow Guard.ã€‚ ç®€ç§°CFGï¼Œå¯ä»¥åœ¨clç¼–è¯‘é€‰æ‹©ä¸­æŒ‡å®šï¼Œç”¨äºæŠµæŠ—å†…å­˜æŸåæ¼æ´")));
+dll_characteristicscharacteritics_flags_machine_sub_ssytem_type_my_map.insert(std::pair<_ui,motherfucker_string>(0x8000,_TEXT("Terminal Server aware.æˆ‘ä¸çŸ¥é“è¿™ä¸ªåˆ°åº•æ˜¯ä»€ä¹ˆæ„æ€")));
 /*
 Constant	Value	Description
 0x0001
@@ -1302,12 +1302,12 @@ Terminal Server aware.
 strm.seekg (pe_header_offset+4+2+2+4+4+4+2+2+2+2+4+4+4+4+4+seek_offset+image_bse_sizeof+4+4+2+2+4+4+4+4+4+4+2);
 memset(buffer,0,64);
 strm.read (buffer, 2);
-//·­×ª
+//ç¿»è½¬
 memset(_tmnp_string,0,3);
 
 
 
-//        cout("ÄãÊÇ64Î»¶Ô°É£¿\n");
+//        cout("ä½ æ˜¯64ä½å¯¹å§ï¼Ÿ\n");
       
            hex_sting = (char*)malloc(8+1);
 
@@ -1317,14 +1317,14 @@ sprintf(_tmnp_string,"%02x",(unsigned char)buffer[0]);
 strcat(hex_sting, _tmnp_string);
 time_stamp_umber_of_sections=(_ui)strtoul(hex_sting,NULL,16);
 free(hex_sting);
-cout("dll chacacteristic£º");cout("\n");
+cout("dll chacacteristicï¼š");cout("\n");
     iter = dll_characteristicscharacteritics_flags_machine_sub_ssytem_type_my_map.begin();
     while(iter != dll_characteristicscharacteritics_flags_machine_sub_ssytem_type_my_map.end()) {
 //            cout<<typeid(time_stamp_umber_of_sections&(iter->first)).name();
             _ui fuckyou=time_stamp_umber_of_sections&(iter->first);
 //    printf("and op %u\n",fuckyou==0);
         if(fuckyou>0){
-//            cout("½øÀ´ÁË\n");
+//            cout("è¿›æ¥äº†\n");
            acout("\t");pout(iter->second);acout("\n");
         }
         iter++;
@@ -1332,20 +1332,20 @@ cout("dll chacacteristic£º");cout("\n");
 
 
 // size_of_stack_reserve_32
-// ÎÒÔÚÕâ¸öµØ·½ÕÒ´òÁËhttps://stackoverflow.com/questions/1858053/when-does-the-stack-really-overflow
-// Õâ¸ö»Ø´ğ¶Ôsize_of_stack_reserve_32ºÍSizeOfStackCommitµÄ½âÊÍ»¹ÊÇ±È½ÏÍ¸³¹µÄ
-// ÕâÁ½¸ö¶¼ÊÇÓÃÀ´ÏŞÖÆÕ»ÄÚ´æµÄ£¬µ«ÊÇÇ°ÕßÏŞÖÆµÄÊÇĞéÄâÄÚ´æ£¬ºóÕßÏŞÖÆµÄÊÇÎïÀíÄÚ´æ
-// µ±ÄãÊ¹ÓÃµÄÕ»¿Õ¼ä´óÓÚÎïÀíÄÚ´æÊ±£¬¾Í»á¿ªÊ¼Ê¹ÓÃĞéÄâÄÚ´æ£¬¼´´ÅÅÌ£¨Ò³½»»»£©
-//ÕâÁ½¸ö×Ö¶ÎÓĞpe32ºÍpe32+µÄÇø±ğ£¬Ç°ÕßÕ¼ÓÃ4bytes£¬ºóÕßÕ¼ÓÃ8bytes
+// æˆ‘åœ¨è¿™ä¸ªåœ°æ–¹æ‰¾æ‰“äº†https://stackoverflow.com/questions/1858053/when-does-the-stack-really-overflow
+// è¿™ä¸ªå›ç­”å¯¹size_of_stack_reserve_32å’ŒSizeOfStackCommitçš„è§£é‡Šè¿˜æ˜¯æ¯”è¾ƒé€å½»çš„
+// è¿™ä¸¤ä¸ªéƒ½æ˜¯ç”¨æ¥é™åˆ¶æ ˆå†…å­˜çš„ï¼Œä½†æ˜¯å‰è€…é™åˆ¶çš„æ˜¯è™šæ‹Ÿå†…å­˜ï¼Œåè€…é™åˆ¶çš„æ˜¯ç‰©ç†å†…å­˜
+// å½“ä½ ä½¿ç”¨çš„æ ˆç©ºé—´å¤§äºç‰©ç†å†…å­˜æ—¶ï¼Œå°±ä¼šå¼€å§‹ä½¿ç”¨è™šæ‹Ÿå†…å­˜ï¼Œå³ç£ç›˜ï¼ˆé¡µäº¤æ¢ï¼‰
+//è¿™ä¸¤ä¸ªå­—æ®µæœ‰pe32å’Œpe32+çš„åŒºåˆ«ï¼Œå‰è€…å ç”¨4bytesï¼Œåè€…å ç”¨8bytes
 strm.seekg (pe_header_offset+4+2+2+4+4+4+2+2+2+2+4+4+4+4+4+seek_offset+image_bse_sizeof+4+4+2+2+4+4+4+4+4+4+2+2);
 memset(buffer,0,64);
 strm.read (buffer, image_bse_sizeof);
-//·­×ª
+//ç¿»è½¬
 memset(_tmnp_string,0,3);
 
 
 if(image_bse_sizeof==8) {
-//        cout("ÄãÊÇ64Î»¶Ô°É£¿\n");
+//        cout("ä½ æ˜¯64ä½å¯¹å§ï¼Ÿ\n");
        unsigned __int64 time_stamp_umber_of_sections2=0;
            hex_sting = (char*)malloc(8+1);
 sprintf(_tmnp_string,"%02x",(unsigned char)buffer[3]);
@@ -1356,12 +1356,12 @@ sprintf(_tmnp_string,"%02x",(unsigned char)buffer[1]);
 strcat(hex_sting, _tmnp_string);
 sprintf(_tmnp_string,"%02x",(unsigned char)buffer[0]);
 strcat(hex_sting, _tmnp_string);
-//cout("16½øÖÆ×Ö·û´®");
+//cout("16è¿›åˆ¶å­—ç¬¦ä¸²");
 //pout(hex_sting);
 //cout("\n");
 
 time_stamp_umber_of_sections=(_ui)strtoul(hex_sting,NULL,16);
-// cout("µÍ16bit");
+// cout("ä½16bit");
 
 free(hex_sting);
 //printf("0x%x\n", time_stamp_umber_of_sections);
@@ -1374,7 +1374,7 @@ sprintf(_tmnp_string,"%02x",(unsigned char)buffer[5]);
 strcat(hex_sting, _tmnp_string);
 sprintf(_tmnp_string,"%02x",(unsigned char)buffer[4]);
 strcat(hex_sting, _tmnp_string);
-//cout("16½øÖÆ×Ö·û´®");
+//cout("16è¿›åˆ¶å­—ç¬¦ä¸²");
 //pout(hex_sting);
 //cout("\n");
 time_stamp_umber_of_sections2=(_ul long)strtoul(hex_sting,NULL,16);
@@ -1387,12 +1387,12 @@ free(hex_sting);
 //time_stamp_umber_of_sections2=time_stamp_umber_of_sections2<<32;
 //printf("%ull\n\n",time_stamp_umber_of_sections2);
 //time_stamp_umber_of_sections2=(unsigned __int64);
-cout("size_of_stack_reserve_64£º");
+cout("size_of_stack_reserve_64ï¼š");
 //std::cout<<sizeof(_strtoui64(hex_sting,NULL,16))<<std::endl;
-//ÎÒÖªµÀÎªÊ²Ã´ÕâÀïÎÒµÄ64bitµÄ±äÁ¿×ÜÊÇ»á¶ªÆúÒ»°ãµÄÊı¾İ±à³Ì32bitÁË
-//ÒòÎªÎÒÃÇÓÃµÄÊÇ32bitµÄ±àÒëÆ÷£¬ĞèÒªĞŞ¸ÄÒ»ÏÂbuild oiptionsÀïÃæµÄpre step£¬»·¾³±äÁ¿½Å±¾Ó¦¸ÃÊÇ¡¢
+//æˆ‘çŸ¥é“ä¸ºä»€ä¹ˆè¿™é‡Œæˆ‘çš„64bitçš„å˜é‡æ€»æ˜¯ä¼šä¸¢å¼ƒä¸€èˆ¬çš„æ•°æ®ç¼–ç¨‹32bitäº†
+//å› ä¸ºæˆ‘ä»¬ç”¨çš„æ˜¯32bitçš„ç¼–è¯‘å™¨ï¼Œéœ€è¦ä¿®æ”¹ä¸€ä¸‹build oiptionsé‡Œé¢çš„pre stepï¼Œç¯å¢ƒå˜é‡è„šæœ¬åº”è¯¥æ˜¯ã€
 //C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\amd64\vcvars64.bat
-// ÎÒµÄÕâ¸ö±àÒëÆ÷¿ÉÄÜ¾Í²»Ö§³Ö64bitµÄÕûÊı£¬ÎÒ·ÅÆúÁË£¬·Ö¿ªÏÔÊ¾ËãÁË
+// æˆ‘çš„è¿™ä¸ªç¼–è¯‘å™¨å¯èƒ½å°±ä¸æ”¯æŒ64bitçš„æ•´æ•°ï¼Œæˆ‘æ”¾å¼ƒäº†ï¼Œåˆ†å¼€æ˜¾ç¤ºç®—äº†
 printf("0x%x",time_stamp_umber_of_sections2);printf("%08x bytes",time_stamp_umber_of_sections);acout("\n");
 }else{
 
@@ -1407,19 +1407,19 @@ sprintf(_tmnp_string,"%02x",(unsigned char)buffer[0]);
 strcat(hex_sting, _tmnp_string);
 time_stamp_umber_of_sections=(_ui)strtoul(hex_sting,NULL,16);
 free(hex_sting);
-cout("size_of_stack_reserve_32£º");
+cout("size_of_stack_reserve_32ï¼š");
 printf("0x%08x bytes",time_stamp_umber_of_sections);acout("\n");
 }
 // commit size
 strm.seekg (pe_header_offset+4+2+2+4+4+4+2+2+2+2+4+4+4+4+4+seek_offset+image_bse_sizeof+4+4+2+2+4+4+4+4+4+4+2+2+image_bse_sizeof);
 memset(buffer,0,64);
 strm.read (buffer, image_bse_sizeof);
-//·­×ª
+//ç¿»è½¬
 memset(_tmnp_string,0,3);
 
 
 if(image_bse_sizeof==8) {
-//        cout("ÄãÊÇ64Î»¶Ô°É£¿\n");
+//        cout("ä½ æ˜¯64ä½å¯¹å§ï¼Ÿ\n");
        unsigned __int64 time_stamp_umber_of_sections2=0;
            hex_sting = (char*)malloc(8+1);
 sprintf(_tmnp_string,"%02x",(unsigned char)buffer[3]);
@@ -1430,12 +1430,12 @@ sprintf(_tmnp_string,"%02x",(unsigned char)buffer[1]);
 strcat(hex_sting, _tmnp_string);
 sprintf(_tmnp_string,"%02x",(unsigned char)buffer[0]);
 strcat(hex_sting, _tmnp_string);
-//cout("16½øÖÆ×Ö·û´®");
+//cout("16è¿›åˆ¶å­—ç¬¦ä¸²");
 //pout(hex_sting);
 //cout("\n");
 
 time_stamp_umber_of_sections=(_ui)strtoul(hex_sting,NULL,16);
-// cout("µÍ16bit");
+// cout("ä½16bit");
 
 free(hex_sting);
 //printf("0x%x\n", time_stamp_umber_of_sections);
@@ -1448,7 +1448,7 @@ sprintf(_tmnp_string,"%02x",(unsigned char)buffer[5]);
 strcat(hex_sting, _tmnp_string);
 sprintf(_tmnp_string,"%02x",(unsigned char)buffer[4]);
 strcat(hex_sting, _tmnp_string);
-//cout("16½øÖÆ×Ö·û´®");
+//cout("16è¿›åˆ¶å­—ç¬¦ä¸²");
 //pout(hex_sting);
 //cout("\n");
 time_stamp_umber_of_sections2=(_ul long)strtoul(hex_sting,NULL,16);
@@ -1461,12 +1461,12 @@ free(hex_sting);
 //time_stamp_umber_of_sections2=time_stamp_umber_of_sections2<<32;
 //printf("%ull\n\n",time_stamp_umber_of_sections2);
 //time_stamp_umber_of_sections2=(unsigned __int64);
-cout("size_of_stack_commit_64£º");
+cout("size_of_stack_commit_64ï¼š");
 //std::cout<<sizeof(_strtoui64(hex_sting,NULL,16))<<std::endl;
-//ÎÒÖªµÀÎªÊ²Ã´ÕâÀïÎÒµÄ64bitµÄ±äÁ¿×ÜÊÇ»á¶ªÆúÒ»°ãµÄÊı¾İ±à³Ì32bitÁË
-//ÒòÎªÎÒÃÇÓÃµÄÊÇ32bitµÄ±àÒëÆ÷£¬ĞèÒªĞŞ¸ÄÒ»ÏÂbuild oiptionsÀïÃæµÄpre step£¬»·¾³±äÁ¿½Å±¾Ó¦¸ÃÊÇ¡¢
+//æˆ‘çŸ¥é“ä¸ºä»€ä¹ˆè¿™é‡Œæˆ‘çš„64bitçš„å˜é‡æ€»æ˜¯ä¼šä¸¢å¼ƒä¸€èˆ¬çš„æ•°æ®ç¼–ç¨‹32bitäº†
+//å› ä¸ºæˆ‘ä»¬ç”¨çš„æ˜¯32bitçš„ç¼–è¯‘å™¨ï¼Œéœ€è¦ä¿®æ”¹ä¸€ä¸‹build oiptionsé‡Œé¢çš„pre stepï¼Œç¯å¢ƒå˜é‡è„šæœ¬åº”è¯¥æ˜¯ã€
 //C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\amd64\vcvars64.bat
-// ÎÒµÄÕâ¸ö±àÒëÆ÷¿ÉÄÜ¾Í²»Ö§³Ö64bitµÄÕûÊı£¬ÎÒ·ÅÆúÁË£¬·Ö¿ªÏÔÊ¾ËãÁË
+// æˆ‘çš„è¿™ä¸ªç¼–è¯‘å™¨å¯èƒ½å°±ä¸æ”¯æŒ64bitçš„æ•´æ•°ï¼Œæˆ‘æ”¾å¼ƒäº†ï¼Œåˆ†å¼€æ˜¾ç¤ºç®—äº†
 printf("0x%x",time_stamp_umber_of_sections2);printf("%08x bytes",time_stamp_umber_of_sections);acout("\n");
 }else{
 
@@ -1481,20 +1481,20 @@ sprintf(_tmnp_string,"%02x",(unsigned char)buffer[0]);
 strcat(hex_sting, _tmnp_string);
 time_stamp_umber_of_sections=(_ui)strtoul(hex_sting,NULL,16);
 free(hex_sting);
-cout("size_of_stack_commit_32£º");
+cout("size_of_stack_commit_32ï¼š");
 printf("0x%08x bytes",time_stamp_umber_of_sections);acout("\n");
 }
 
-// ÏÂÃæÊÇsizeofheaporeserverºÍcommit£¬ºÍÉÏÃæµÄstack¸ÅÄîÒ»Ñù
+// ä¸‹é¢æ˜¯sizeofheaporeserverå’Œcommitï¼Œå’Œä¸Šé¢çš„stackæ¦‚å¿µä¸€æ ·
 strm.seekg (pe_header_offset+4+2+2+4+4+4+2+2+2+2+4+4+4+4+4+seek_offset+image_bse_sizeof+4+4+2+2+4+4+4+4+4+4+2+2+image_bse_sizeof+image_bse_sizeof);
 memset(buffer,0,64);
 strm.read (buffer, image_bse_sizeof);
-//·­×ª
+//ç¿»è½¬
 memset(_tmnp_string,0,3);
 
 
 if(image_bse_sizeof==8) {
-//        cout("ÄãÊÇ64Î»¶Ô°É£¿\n");
+//        cout("ä½ æ˜¯64ä½å¯¹å§ï¼Ÿ\n");
        unsigned __int64 time_stamp_umber_of_sections2=0;
            hex_sting = (char*)malloc(8+1);
 sprintf(_tmnp_string,"%02x",(unsigned char)buffer[3]);
@@ -1505,12 +1505,12 @@ sprintf(_tmnp_string,"%02x",(unsigned char)buffer[1]);
 strcat(hex_sting, _tmnp_string);
 sprintf(_tmnp_string,"%02x",(unsigned char)buffer[0]);
 strcat(hex_sting, _tmnp_string);
-//cout("16½øÖÆ×Ö·û´®");
+//cout("16è¿›åˆ¶å­—ç¬¦ä¸²");
 //pout(hex_sting);
 //cout("\n");
 
 time_stamp_umber_of_sections=(_ui)strtoul(hex_sting,NULL,16);
-// cout("µÍ16bit");
+// cout("ä½16bit");
 
 free(hex_sting);
 //printf("0x%x\n", time_stamp_umber_of_sections);
@@ -1523,7 +1523,7 @@ sprintf(_tmnp_string,"%02x",(unsigned char)buffer[5]);
 strcat(hex_sting, _tmnp_string);
 sprintf(_tmnp_string,"%02x",(unsigned char)buffer[4]);
 strcat(hex_sting, _tmnp_string);
-//cout("16½øÖÆ×Ö·û´®");
+//cout("16è¿›åˆ¶å­—ç¬¦ä¸²");
 //pout(hex_sting);
 //cout("\n");
 time_stamp_umber_of_sections2=(_ul long)strtoul(hex_sting,NULL,16);
@@ -1536,12 +1536,12 @@ free(hex_sting);
 //time_stamp_umber_of_sections2=time_stamp_umber_of_sections2<<32;
 //printf("%ull\n\n",time_stamp_umber_of_sections2);
 //time_stamp_umber_of_sections2=(unsigned __int64);
-cout("size_of_heap_reserve_64£º");
+cout("size_of_heap_reserve_64ï¼š");
 //std::cout<<sizeof(_strtoui64(hex_sting,NULL,16))<<std::endl;
-//ÎÒÖªµÀÎªÊ²Ã´ÕâÀïÎÒµÄ64bitµÄ±äÁ¿×ÜÊÇ»á¶ªÆúÒ»°ãµÄÊı¾İ±à³Ì32bitÁË
-//ÒòÎªÎÒÃÇÓÃµÄÊÇ32bitµÄ±àÒëÆ÷£¬ĞèÒªĞŞ¸ÄÒ»ÏÂbuild oiptionsÀïÃæµÄpre step£¬»·¾³±äÁ¿½Å±¾Ó¦¸ÃÊÇ¡¢
+//æˆ‘çŸ¥é“ä¸ºä»€ä¹ˆè¿™é‡Œæˆ‘çš„64bitçš„å˜é‡æ€»æ˜¯ä¼šä¸¢å¼ƒä¸€èˆ¬çš„æ•°æ®ç¼–ç¨‹32bitäº†
+//å› ä¸ºæˆ‘ä»¬ç”¨çš„æ˜¯32bitçš„ç¼–è¯‘å™¨ï¼Œéœ€è¦ä¿®æ”¹ä¸€ä¸‹build oiptionsé‡Œé¢çš„pre stepï¼Œç¯å¢ƒå˜é‡è„šæœ¬åº”è¯¥æ˜¯ã€
 //C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\amd64\vcvars64.bat
-// ÎÒµÄÕâ¸ö±àÒëÆ÷¿ÉÄÜ¾Í²»Ö§³Ö64bitµÄÕûÊı£¬ÎÒ·ÅÆúÁË£¬·Ö¿ªÏÔÊ¾ËãÁË
+// æˆ‘çš„è¿™ä¸ªç¼–è¯‘å™¨å¯èƒ½å°±ä¸æ”¯æŒ64bitçš„æ•´æ•°ï¼Œæˆ‘æ”¾å¼ƒäº†ï¼Œåˆ†å¼€æ˜¾ç¤ºç®—äº†
 printf("0x%x",time_stamp_umber_of_sections2);printf("%08x bytes",time_stamp_umber_of_sections);acout("\n");
 }else{
 
@@ -1556,19 +1556,19 @@ sprintf(_tmnp_string,"%02x",(unsigned char)buffer[0]);
 strcat(hex_sting, _tmnp_string);
 time_stamp_umber_of_sections=(_ui)strtoul(hex_sting,NULL,16);
 free(hex_sting);
-cout("size_of_heap_reserve_32£º");
+cout("size_of_heap_reserve_32ï¼š");
 printf("0x%08x bytes",time_stamp_umber_of_sections);acout("\n");
 }
 // commit
 strm.seekg (pe_header_offset+4+2+2+4+4+4+2+2+2+2+4+4+4+4+4+seek_offset+image_bse_sizeof+4+4+2+2+4+4+4+4+4+4+2+2+image_bse_sizeof+image_bse_sizeof+image_bse_sizeof);
 memset(buffer,0,64);
 strm.read (buffer, image_bse_sizeof);
-//·­×ª
+//ç¿»è½¬
 memset(_tmnp_string,0,3);
 
 
 if(image_bse_sizeof==8) {
-//        cout("ÄãÊÇ64Î»¶Ô°É£¿\n");
+//        cout("ä½ æ˜¯64ä½å¯¹å§ï¼Ÿ\n");
        unsigned __int64 time_stamp_umber_of_sections2=0;
            hex_sting = (char*)malloc(8+1);
 sprintf(_tmnp_string,"%02x",(unsigned char)buffer[3]);
@@ -1579,12 +1579,12 @@ sprintf(_tmnp_string,"%02x",(unsigned char)buffer[1]);
 strcat(hex_sting, _tmnp_string);
 sprintf(_tmnp_string,"%02x",(unsigned char)buffer[0]);
 strcat(hex_sting, _tmnp_string);
-//cout("16½øÖÆ×Ö·û´®");
+//cout("16è¿›åˆ¶å­—ç¬¦ä¸²");
 //pout(hex_sting);
 //cout("\n");
 
 time_stamp_umber_of_sections=(_ui)strtoul(hex_sting,NULL,16);
-// cout("µÍ16bit");
+// cout("ä½16bit");
 
 free(hex_sting);
 //printf("0x%x\n", time_stamp_umber_of_sections);
@@ -1597,7 +1597,7 @@ sprintf(_tmnp_string,"%02x",(unsigned char)buffer[5]);
 strcat(hex_sting, _tmnp_string);
 sprintf(_tmnp_string,"%02x",(unsigned char)buffer[4]);
 strcat(hex_sting, _tmnp_string);
-//cout("16½øÖÆ×Ö·û´®");
+//cout("16è¿›åˆ¶å­—ç¬¦ä¸²");
 //pout(hex_sting);
 //cout("\n");
 time_stamp_umber_of_sections2=(_ul long)strtoul(hex_sting,NULL,16);
@@ -1610,12 +1610,12 @@ free(hex_sting);
 //time_stamp_umber_of_sections2=time_stamp_umber_of_sections2<<32;
 //printf("%ull\n\n",time_stamp_umber_of_sections2);
 //time_stamp_umber_of_sections2=(unsigned __int64);
-cout("size_of_heap_commit_64£º");
+cout("size_of_heap_commit_64ï¼š");
 //std::cout<<sizeof(_strtoui64(hex_sting,NULL,16))<<std::endl;
-//ÎÒÖªµÀÎªÊ²Ã´ÕâÀïÎÒµÄ64bitµÄ±äÁ¿×ÜÊÇ»á¶ªÆúÒ»°ãµÄÊı¾İ±à³Ì32bitÁË
-//ÒòÎªÎÒÃÇÓÃµÄÊÇ32bitµÄ±àÒëÆ÷£¬ĞèÒªĞŞ¸ÄÒ»ÏÂbuild oiptionsÀïÃæµÄpre step£¬»·¾³±äÁ¿½Å±¾Ó¦¸ÃÊÇ¡¢
+//æˆ‘çŸ¥é“ä¸ºä»€ä¹ˆè¿™é‡Œæˆ‘çš„64bitçš„å˜é‡æ€»æ˜¯ä¼šä¸¢å¼ƒä¸€èˆ¬çš„æ•°æ®ç¼–ç¨‹32bitäº†
+//å› ä¸ºæˆ‘ä»¬ç”¨çš„æ˜¯32bitçš„ç¼–è¯‘å™¨ï¼Œéœ€è¦ä¿®æ”¹ä¸€ä¸‹build oiptionsé‡Œé¢çš„pre stepï¼Œç¯å¢ƒå˜é‡è„šæœ¬åº”è¯¥æ˜¯ã€
 //C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\amd64\vcvars64.bat
-// ÎÒµÄÕâ¸ö±àÒëÆ÷¿ÉÄÜ¾Í²»Ö§³Ö64bitµÄÕûÊı£¬ÎÒ·ÅÆúÁË£¬·Ö¿ªÏÔÊ¾ËãÁË
+// æˆ‘çš„è¿™ä¸ªç¼–è¯‘å™¨å¯èƒ½å°±ä¸æ”¯æŒ64bitçš„æ•´æ•°ï¼Œæˆ‘æ”¾å¼ƒäº†ï¼Œåˆ†å¼€æ˜¾ç¤ºç®—äº†
 printf("0x%x",time_stamp_umber_of_sections2);printf("%08x bytes",time_stamp_umber_of_sections);acout("\n");
 }else{
 
@@ -1630,23 +1630,23 @@ sprintf(_tmnp_string,"%02x",(unsigned char)buffer[0]);
 strcat(hex_sting, _tmnp_string);
 time_stamp_umber_of_sections=(_ui)strtoul(hex_sting,NULL,16);
 free(hex_sting);
-cout("size_of_heap_commit_32£º");
+cout("size_of_heap_commit_32ï¼š");
 printf("0x%08x bytes",time_stamp_umber_of_sections);acout("\n");
 }
-// ÔÙÍùÏÂ£¬ÊÇ4bytesµÄloader flag£¬±£Áô×Ö¶Î£¬Ö±½ÓÂÔ¹ı
+// å†å¾€ä¸‹ï¼Œæ˜¯4bytesçš„loader flagï¼Œä¿ç•™å­—æ®µï¼Œç›´æ¥ç•¥è¿‡
 strm.seekg (pe_header_offset+4+2+2+4+4+4+2+2+2+2+4+4+4+4+4+seek_offset+image_bse_sizeof+4+4+2+2+4+4+4+4+4+4+2+2+image_bse_sizeof+image_bse_sizeof+image_bse_sizeof+image_bse_sizeof);
 
-// ×îºóÊÇnumber_of_rva_and_sizes
-//  data-directory µÄÊıÁ¿ 4bytes
+// æœ€åæ˜¯number_of_rva_and_sizes
+//  data-directory çš„æ•°é‡ 4bytes
 strm.seekg (pe_header_offset+4+2+2+4+4+4+2+2+2+2+4+4+4+4+4+seek_offset+image_bse_sizeof+4+4+2+2+4+4+4+4+4+4+2+2+image_bse_sizeof+image_bse_sizeof+image_bse_sizeof+image_bse_sizeof+4);
 memset(buffer,0,64);
 strm.read (buffer, 4);
-//·­×ª
+//ç¿»è½¬
 memset(_tmnp_string,0,3);
 
 
 
-//        cout("ÄãÊÇ64Î»¶Ô°É£¿\n");
+//        cout("ä½ æ˜¯64ä½å¯¹å§ï¼Ÿ\n");
     //    unsigned __int64 time_stamp_umber_of_sections2=0;
            hex_sting = (char*)malloc(8+1);
 sprintf(_tmnp_string,"%02x",(unsigned char)buffer[3]);
@@ -1657,12 +1657,12 @@ sprintf(_tmnp_string,"%02x",(unsigned char)buffer[1]);
 strcat(hex_sting, _tmnp_string);
 sprintf(_tmnp_string,"%02x",(unsigned char)buffer[0]);
 strcat(hex_sting, _tmnp_string);
-//cout("16½øÖÆ×Ö·û´®");
+//cout("16è¿›åˆ¶å­—ç¬¦ä¸²");
 //pout(hex_sting);
 //cout("\n");
 
 
-//cout("16½øÖÆ×Ö·û´®");
+//cout("16è¿›åˆ¶å­—ç¬¦ä¸²");
 //pout(hex_sting);
 //cout("\n");
 time_stamp_umber_of_sections=(_ul long)strtoul(hex_sting,NULL,16);
@@ -1675,26 +1675,26 @@ free(hex_sting);
 //time_stamp_umber_of_sections2=time_stamp_umber_of_sections2<<32;
 //printf("%ull\n\n",time_stamp_umber_of_sections2);
 //time_stamp_umber_of_sections2=(unsigned __int64);
-cout("data directoryÊıÁ¿£º");
+cout("data directoryæ•°é‡ï¼š");
 //std::cout<<sizeof(_strtoui64(hex_sting,NULL,16))<<std::endl;
-//ÎÒÖªµÀÎªÊ²Ã´ÕâÀïÎÒµÄ64bitµÄ±äÁ¿×ÜÊÇ»á¶ªÆúÒ»°ãµÄÊı¾İ±à³Ì32bitÁË
-//ÒòÎªÎÒÃÇÓÃµÄÊÇ32bitµÄ±àÒëÆ÷£¬ĞèÒªĞŞ¸ÄÒ»ÏÂbuild oiptionsÀïÃæµÄpre step£¬»·¾³±äÁ¿½Å±¾Ó¦¸ÃÊÇ¡¢
+//æˆ‘çŸ¥é“ä¸ºä»€ä¹ˆè¿™é‡Œæˆ‘çš„64bitçš„å˜é‡æ€»æ˜¯ä¼šä¸¢å¼ƒä¸€èˆ¬çš„æ•°æ®ç¼–ç¨‹32bitäº†
+//å› ä¸ºæˆ‘ä»¬ç”¨çš„æ˜¯32bitçš„ç¼–è¯‘å™¨ï¼Œéœ€è¦ä¿®æ”¹ä¸€ä¸‹build oiptionsé‡Œé¢çš„pre stepï¼Œç¯å¢ƒå˜é‡è„šæœ¬åº”è¯¥æ˜¯ã€
 //C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\amd64\vcvars64.bat
-// ÎÒµÄÕâ¸ö±àÒëÆ÷¿ÉÄÜ¾Í²»Ö§³Ö64bitµÄÕûÊı£¬ÎÒ·ÅÆúÁË£¬·Ö¿ªÏÔÊ¾ËãÁË
+// æˆ‘çš„è¿™ä¸ªç¼–è¯‘å™¨å¯èƒ½å°±ä¸æ”¯æŒ64bitçš„æ•´æ•°ï¼Œæˆ‘æ”¾å¼ƒäº†ï¼Œåˆ†å¼€æ˜¾ç¤ºç®—äº†
 printf("%u",time_stamp_umber_of_sections);acout("\n");
 
 
-cout("\n==================================½áÊø----windows²¿·Ö----½áÊø==================================");acout("\n");
+cout("\n==================================ç»“æŸ----windowséƒ¨åˆ†----ç»“æŸ==================================");acout("\n");
 
-cout("\n==================================¿ªÊ¼----data directory²¿·Ö----¿ªÊ¼==================================");acout("\n");
+cout("\n==================================å¼€å§‹----data directoryéƒ¨åˆ†----å¼€å§‹==================================");acout("\n");
 strm.seekg (pe_header_offset+4+2+2+4+4+4+2+2+2+2+4+4+4+4+4+seek_offset+image_bse_sizeof+4+4+2+2+4+4+4+4+4+4+2+2+image_bse_sizeof+image_bse_sizeof+image_bse_sizeof+image_bse_sizeof+4+4);
 
-// ÎÒÃÇĞèÒªÁ¬Ğø¶ÁÈ¡15¸ö8×Ö½ÚÊı¾İ£¬Ã¿Ò»¸ö8×Ö½ÚÊı¾İ¶¼ÊÇÒ»¸ödata directory£¬°üº¬ÁËÒ»¸öµØÖ·ºÍsize
+// æˆ‘ä»¬éœ€è¦è¿ç»­è¯»å–15ä¸ª8å­—èŠ‚æ•°æ®ï¼Œæ¯ä¸€ä¸ª8å­—èŠ‚æ•°æ®éƒ½æ˜¯ä¸€ä¸ªdata directoryï¼ŒåŒ…å«äº†ä¸€ä¸ªåœ°å€å’Œsize
 
 char buffer2[15*8] = {0};
 memset(buffer2,0,15*8);
 strm.read (buffer2, 15*8);
-//·­×ª
+//ç¿»è½¬
 memset(_tmnp_string,0,3);
 
 std::map<_ui, motherfucker_string> data_directory_characteritics_flags_machine_type_my_map ;
@@ -1731,8 +1731,8 @@ for(int i=0;i<15;i++){
     strcat(hex_sting, _tmnp_string);
     time_stamp_umber_of_sections=(_ul long)strtoul(hex_sting,NULL,16);
     free(hex_sting);
-    cout("£º\n\t");
-    cout("µØÖ·£¨RVA£©£º");
+    cout("ï¼š\n\t");
+    cout("åœ°å€ï¼ˆRVAï¼‰ï¼š");
     printf("\t0x%08x\n",time_stamp_umber_of_sections);
     data_directory.addr = time_stamp_umber_of_sections;
     hex_sting = (char*)malloc(8+1);
@@ -1748,26 +1748,26 @@ for(int i=0;i<15;i++){
     free(hex_sting);
     data_directory.size = time_stamp_umber_of_sections;
     cout("\t");
-    cout("size£º");
+    cout("sizeï¼š");
     printf("\t\t%u bytes\n\n",time_stamp_umber_of_sections);
     data_directory_map.insert(std::pair<motherfucker_string, struct DATA_DIRECTORY_STRUCT>(data_directory_characteritics_flags_machine_type_my_map[i], data_directory));
 }
 
 FUCK("0x%x\n",data_directory_map[_TEXT("import_table")].addr);
 
-cout("\n==================================½áÊø----data directory²¿·Ö----½áÊø==================================");acout("\n");
-cout("\n£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿½áÊø----OPTIONAL HEADER----½áÊø£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿£¿");acout("\n");
+cout("\n==================================ç»“æŸ----data directoryéƒ¨åˆ†----ç»“æŸ==================================");acout("\n");
+cout("\nï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿç»“æŸ----OPTIONAL HEADER----ç»“æŸï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿ");acout("\n");
 
-// ½ÓÏÂÀ´ÊÇseciton ²¿·Ö
-cout("\n£¤£¤£¤£¤£¤£¤£¤£¤£¤£¤£¤£¤£¤£¤£¤£¤£¤£¤£¤£¤£¤£¤£¤£¤£¤£¤£¤¿ªÊ¼----SECTION HEADERs----¿ªÊ¼£¤£¤£¤£¤£¤£¤£¤£¤£¤£¤£¤£¤£¤£¤£¤£¤£¤£¤£¤£¤£¤£¤£¤£¤£¤£¤£¤");acout("\n");
-// ÓÉÓÚ´æÔÚfile alignment£¬¼´ÎÄ¼ş¶ÔÆë£¬ÔÚ¿ªÊ¼´¦ÀíÏÂÒ»²¿·ÖµÄÊ±ºòµÄ£¬ĞèÒª¼ì²é´ËÊ±µÄÆ«ÒÆÁ¿ÊÇ·ñÊÇfile alignmentµÄ±¶Êı
-// µ±Ç°µÄÆ«ÒÆÁ¿ÊÇpe_header_offset+4+2+2+4+4+4+2+2+2+2+4+4+4+4+4+seek_offset+image_bse_sizeof+4+4+2+2+4+4+4+4+4+4+2+2+image_bse_sizeof+image_bse_sizeof+image_bse_sizeof+image_bse_sizeof+4+4+15*8
+// æ¥ä¸‹æ¥æ˜¯seciton éƒ¨åˆ†
+cout("\nï¿¥ï¿¥ï¿¥ï¿¥ï¿¥ï¿¥ï¿¥ï¿¥ï¿¥ï¿¥ï¿¥ï¿¥ï¿¥ï¿¥ï¿¥ï¿¥ï¿¥ï¿¥ï¿¥ï¿¥ï¿¥ï¿¥ï¿¥ï¿¥ï¿¥ï¿¥ï¿¥å¼€å§‹----SECTION HEADERs----å¼€å§‹ï¿¥ï¿¥ï¿¥ï¿¥ï¿¥ï¿¥ï¿¥ï¿¥ï¿¥ï¿¥ï¿¥ï¿¥ï¿¥ï¿¥ï¿¥ï¿¥ï¿¥ï¿¥ï¿¥ï¿¥ï¿¥ï¿¥ï¿¥ï¿¥ï¿¥ï¿¥ï¿¥");acout("\n");
+// ç”±äºå­˜åœ¨file alignmentï¼Œå³æ–‡ä»¶å¯¹é½ï¼Œåœ¨å¼€å§‹å¤„ç†ä¸‹ä¸€éƒ¨åˆ†çš„æ—¶å€™çš„ï¼Œéœ€è¦æ£€æŸ¥æ­¤æ—¶çš„åç§»é‡æ˜¯å¦æ˜¯file alignmentçš„å€æ•°
+// å½“å‰çš„åç§»é‡æ˜¯pe_header_offset+4+2+2+4+4+4+2+2+2+2+4+4+4+4+4+seek_offset+image_bse_sizeof+4+4+2+2+4+4+4+4+4+4+2+2+image_bse_sizeof+image_bse_sizeof+image_bse_sizeof+image_bse_sizeof+4+4+15*8
 
 
 
-// sectionµÄparse¿ÉÒÔÍ¨¹ıÑ­»·À´Íê³É
-// ÏÈÀ´8bytresµÄname
-// ×¢ÒâÌø¹ıoptional headerÖĞdatadirectory µÄ×îºóÒ»¸ö8bytes±£ÁôÎ»
+// sectionçš„parseå¯ä»¥é€šè¿‡å¾ªç¯æ¥å®Œæˆ
+// å…ˆæ¥8bytresçš„name
+// æ³¨æ„è·³è¿‡optional headerä¸­datadirectory çš„æœ€åä¸€ä¸ª8bytesä¿ç•™ä½
 _ui section_offset_counter = 0;
 p_section_header = (struct SECTION_HEADER_STRUCT*)malloc(number_of_sections);
 FUCK("0x%x\n",data_directory_map[_TEXT("import_table")].addr);
@@ -1815,12 +1815,12 @@ sprintf(_tmnp_string,"%02x",buffer[7]);
 strcat(for_dword_string, _tmnp_string);
 p_section_header[section_offset_counter/40].name_low=(DWORD)strtoul(for_dword_string,NULL,16);
 free(for_dword_string);
-cout("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\nÉÈÇø(section)mÃû³Æ£º");
+cout("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\næ‰‡åŒº(section)måç§°ï¼š");
 pout(hex_sting);cout("\n");
 free(hex_sting);
 
 // virtual_size  4bytes
-// ÔÚĞéÄâÄÚ´æÖĞµÄ´óĞ¡£¬Í¬ÑùÊÇÒòÎª´æÔÚÄÚ´æ¶ÔÆë£¬µ¼ÖÂraw sizeºÍ½øÈëÄÚ´æÖ®ºóµÄsize´æÔÚ²îÒì
+// åœ¨è™šæ‹Ÿå†…å­˜ä¸­çš„å¤§å°ï¼ŒåŒæ ·æ˜¯å› ä¸ºå­˜åœ¨å†…å­˜å¯¹é½ï¼Œå¯¼è‡´raw sizeå’Œè¿›å…¥å†…å­˜ä¹‹åçš„sizeå­˜åœ¨å·®å¼‚
 strm.seekg (pe_header_offset+4+2+2+4+4+4+2+2+2+2+4+4+4+4+4+seek_offset+image_bse_sizeof+4+4+2+2+4+4+4+4+4+4+2+2+image_bse_sizeof+image_bse_sizeof+image_bse_sizeof+image_bse_sizeof+4+4+15*8+8+8+section_offset_counter);
 memset(buffer,0,64);
 strm.read(buffer, 4);
@@ -1828,7 +1828,7 @@ strm.read(buffer, 4);
 time_stamp_umber_of_sections = _4_bytes_deal(buffer);
 
 p_section_header[section_offset_counter/40].virtual_size = time_stamp_umber_of_sections;
-cout("virtual size£º");
+cout("virtual sizeï¼š");
 printf("%u bytes\n", time_stamp_umber_of_sections);
 
 // virtual_address  RVA   4bytes
@@ -1838,7 +1838,7 @@ strm.read(buffer, 4);
 FUCK("0x%x\n",data_directory_map[_TEXT("import_table")].addr);
 time_stamp_umber_of_sections = _4_bytes_deal(buffer);
 p_section_header[section_offset_counter/40].virtual_address = time_stamp_umber_of_sections;
-cout("virtual_address£¨RVA£©£º");
+cout("virtual_addressï¼ˆRVAï¼‰ï¼š");
 printf("0x%08x\n", time_stamp_umber_of_sections);
 
 // size_of_raw_data  4bytes
@@ -1847,7 +1847,7 @@ memset(buffer,0,64);
 strm.read(buffer, 4);
 time_stamp_umber_of_sections = _4_bytes_deal(buffer);
 p_section_header[section_offset_counter/40].size_of_raw_data = time_stamp_umber_of_sections;
-cout("size_of_raw_data£º");
+cout("size_of_raw_dataï¼š");
 printf("%u bytes\n", time_stamp_umber_of_sections);
 
 // pointer_to_raw_data  4bytes
@@ -1856,11 +1856,11 @@ memset(buffer,0,64);
 strm.read(buffer, 4);
 time_stamp_umber_of_sections = _4_bytes_deal(buffer);
 p_section_header[section_offset_counter/40].pointer_to_raw_data = time_stamp_umber_of_sections;
-cout("pointer_to_raw_data£¨ÔÚPEÎÄ¼şÖĞµÄµØÖ·£©£º");
+cout("pointer_to_raw_dataï¼ˆåœ¨PEæ–‡ä»¶ä¸­çš„åœ°å€ï¼‰ï¼š");
 printf("0x%08x\n", time_stamp_umber_of_sections);
 
 // pointer_to_relocations  4bytes
-// Õâ¸ö×Ö¶Î¶ÔÓÚ¿ÉÖ´ĞĞÎÄ¼şÃ»ÓĞÒâÒå£¬ËùÒÔÎª0£¬µ«ÊÇ¶ÔÓÚdllµÈÎÄ¼şÊÇÓĞÒâÒåµÄ£¬ÎÒÃÇÕâÀï¾ÍÀÏÀÏÊµÊµ»ñËüµÄÖµ¾ÍĞĞÁË
+// è¿™ä¸ªå­—æ®µå¯¹äºå¯æ‰§è¡Œæ–‡ä»¶æ²¡æœ‰æ„ä¹‰ï¼Œæ‰€ä»¥ä¸º0ï¼Œä½†æ˜¯å¯¹äºdllç­‰æ–‡ä»¶æ˜¯æœ‰æ„ä¹‰çš„ï¼Œæˆ‘ä»¬è¿™é‡Œå°±è€è€å®å®è·å®ƒçš„å€¼å°±è¡Œäº†
 strm.seekg (pe_header_offset+4+2+2+4+4+4+2+2+2+2+4+4+4+4+4+seek_offset+image_bse_sizeof+4+4+2+2+4+4+4+4+4+4+2+2+image_bse_sizeof+image_bse_sizeof+image_bse_sizeof+image_bse_sizeof+4+4+15*8+8+8+4+4+4+4+section_offset_counter);
 memset(buffer,0,64);
 strm.read(buffer, 4);
@@ -1869,17 +1869,17 @@ strm.read(buffer, 4);
 
 time_stamp_umber_of_sections = _4_bytes_deal(buffer);
 p_section_header[section_offset_counter/40].pointer_to_relocations = time_stamp_umber_of_sections;
-cout("pointer_to_relocations£º");
+cout("pointer_to_relocationsï¼š");
 printf("0x%08x\n", time_stamp_umber_of_sections);
 
 // pointer_to_relocations  4bytes
-// Õâ¸ö×Ö¶Î¶ÔÓÚ¿ÉÖ´ĞĞÎÄ¼şÃ»ÓĞÒâÒå£¬ËùÒÔÎª0£¬µ«ÊÇ¶ÔÓÚdllµÈÎÄ¼şÊÇÓĞÒâÒåµÄ£¬ÎÒÃÇÕâÀï¾ÍÀÏÀÏÊµÊµ»ñËüµÄÖµ¾ÍĞĞÁË
+// è¿™ä¸ªå­—æ®µå¯¹äºå¯æ‰§è¡Œæ–‡ä»¶æ²¡æœ‰æ„ä¹‰ï¼Œæ‰€ä»¥ä¸º0ï¼Œä½†æ˜¯å¯¹äºdllç­‰æ–‡ä»¶æ˜¯æœ‰æ„ä¹‰çš„ï¼Œæˆ‘ä»¬è¿™é‡Œå°±è€è€å®å®è·å®ƒçš„å€¼å°±è¡Œäº†
 strm.seekg (pe_header_offset+4+2+2+4+4+4+2+2+2+2+4+4+4+4+4+seek_offset+image_bse_sizeof+4+4+2+2+4+4+4+4+4+4+2+2+image_bse_sizeof+image_bse_sizeof+image_bse_sizeof+image_bse_sizeof+4+4+15*8+8+8+4+4+4+4+4+section_offset_counter);
 memset(buffer,0,64);
 strm.read(buffer, 4);
 time_stamp_umber_of_sections = _4_bytes_deal(buffer);
 p_section_header[section_offset_counter/40].pointer_to_linenumbers = time_stamp_umber_of_sections;
-cout("pointer_to_linenumbers£º");
+cout("pointer_to_linenumbersï¼š");
 printf("0x%08x\n", time_stamp_umber_of_sections);
 
 FUCK("0x%x\n",data_directory_map[_TEXT("import_table")].addr);
@@ -1890,9 +1890,9 @@ strm.read(buffer, 2);
 time_stamp_umber_of_sections = _2_bytes_deal(buffer);
 FUCK("0x%x\n",data_directory_map[_TEXT("import_table")].addr);
 p_section_header[section_offset_counter/40].number_of_relocations = (WORD)time_stamp_umber_of_sections;
-// ¿ÉÄÜÊÇ·¢ÉúÁËÕ»Òç³ö£¬³¢ÊÔ°Ñ±äÁ¿·ÅÔÚ¶ÑÖĞ
+// å¯èƒ½æ˜¯å‘ç”Ÿäº†æ ˆæº¢å‡ºï¼Œå°è¯•æŠŠå˜é‡æ”¾åœ¨å †ä¸­
 FUCK("0x%x\n",data_directory_map[_TEXT("import_table")].addr);
-cout("number_of_relocations£º");
+cout("number_of_relocationsï¼š");
 printf("0x%08x\n", time_stamp_umber_of_sections);
 FUCK("0x%x\n",data_directory_map[_TEXT("import_table")].addr);
 // number_of_linenumbers
@@ -1901,16 +1901,16 @@ memset(buffer,0,64);
 strm.read(buffer, 2);
 time_stamp_umber_of_sections = _2_bytes_deal(buffer);
 p_section_header[section_offset_counter/40].number_of_linenumbers = (WORD)time_stamp_umber_of_sections;
-cout("number_of_linenumbers£º");
+cout("number_of_linenumbersï¼š");
 printf("0x%08x\n", time_stamp_umber_of_sections);
-// characteristics  ÓÖÊÇÒ»¶Ñflag
+// characteristics  åˆæ˜¯ä¸€å †flag
 strm.seekg (pe_header_offset+4+2+2+4+4+4+2+2+2+2+4+4+4+4+4+seek_offset+image_bse_sizeof+4+4+2+2+4+4+4+4+4+4+2+2+image_bse_sizeof+image_bse_sizeof+image_bse_sizeof+image_bse_sizeof+4+4+15*8+8+8+4+4+4+4+4+4+2+2+section_offset_counter);
 memset(buffer,0,64);
 strm.read(buffer, 4);
 time_stamp_umber_of_sections = _4_bytes_deal(buffer);
 p_section_header[section_offset_counter/40].flag = time_stamp_umber_of_sections;
 std::map<_ui, motherfucker_string> section_characteritics_flags_machine_type_my_map ;
-// ÍêÕûÁĞ±í²Î¿¼Î¢Èí¹Ù·½ÎÄµµhttps://docs.microsoft.com/en-us/windows/win32/debug/pe-format#section-flags
+// å®Œæ•´åˆ—è¡¨å‚è€ƒå¾®è½¯å®˜æ–¹æ–‡æ¡£https://docs.microsoft.com/en-us/windows/win32/debug/pe-format#section-flags
 section_characteritics_flags_machine_type_my_map.insert(std::pair<_ui,motherfucker_string>(0x00000000,_TEXT("Reserved for future use.")));
 section_characteritics_flags_machine_type_my_map.insert(std::pair<_ui,motherfucker_string>(0x00000001,_TEXT("Reserved for future use.")));
 section_characteritics_flags_machine_type_my_map.insert(std::pair<_ui,motherfucker_string>(0x00000002,_TEXT("Reserved for future use.")));
@@ -1952,20 +1952,20 @@ section_characteritics_flags_machine_type_my_map.insert(std::pair<_ui,motherfuck
 section_characteritics_flags_machine_type_my_map.insert(std::pair<_ui,motherfucker_string>(0x20000000,_TEXT("The section can be executed as code.")));
 section_characteritics_flags_machine_type_my_map.insert(std::pair<_ui,motherfucker_string>(0x40000000,_TEXT("The section can be read.")));
 section_characteritics_flags_machine_type_my_map.insert(std::pair<_ui,motherfucker_string>(0x80000000,_TEXT("The section can be written to.")));
-cout("ÉÈÇø£¨section£©characteristic flag£º\n\t");
+cout("æ‰‡åŒºï¼ˆsectionï¼‰characteristic flagï¼š\n\t");
 flag_display(section_characteritics_flags_machine_type_my_map,time_stamp_umber_of_sections);
 section_offset_counter+=40;acout("\n");
 FUCK("0x%x\n",data_directory_map[_TEXT("import_table")].addr);
 }
-cout("\n£¤£¤£¤£¤£¤£¤£¤£¤£¤£¤£¤£¤£¤£¤£¤£¤£¤£¤£¤£¤£¤£¤£¤£¤£¤£¤£¤½áÊø----SECTION HEADERs----½áÊø£¤£¤£¤£¤£¤£¤£¤£¤£¤£¤£¤£¤£¤£¤£¤£¤£¤£¤£¤£¤£¤£¤£¤£¤£¤£¤£¤");acout("\n");
+cout("\nï¿¥ï¿¥ï¿¥ï¿¥ï¿¥ï¿¥ï¿¥ï¿¥ï¿¥ï¿¥ï¿¥ï¿¥ï¿¥ï¿¥ï¿¥ï¿¥ï¿¥ï¿¥ï¿¥ï¿¥ï¿¥ï¿¥ï¿¥ï¿¥ï¿¥ï¿¥ï¿¥ç»“æŸ----SECTION HEADERs----ç»“æŸï¿¥ï¿¥ï¿¥ï¿¥ï¿¥ï¿¥ï¿¥ï¿¥ï¿¥ï¿¥ï¿¥ï¿¥ï¿¥ï¿¥ï¿¥ï¿¥ï¿¥ï¿¥ï¿¥ï¿¥ï¿¥ï¿¥ï¿¥ï¿¥ï¿¥ï¿¥ï¿¥");acout("\n");
 
-// ×îºó£¬ÎÒÃÇĞèÒª¶ÔÆäÖĞµÄÒ»²¿·Ödata directory½øĞĞ½âÎö
-// Ê×ÏÈÊÇimport directory
-// Æä¸ñÊ½ÈçÏÂ£ºhttps://docs.microsoft.com/en-us/windows/win32/debug/pe-format#the-idata-section
-// Ö®Ç°ÎÒÃÇÒ²ÒÑ¾­½²¹ıÁË£¬rvaºÍraw addrµÄ×ª»»¹æÔò
-// ĞèÒªsection jheaderÖĞµÄÒ»Ğ©Êı¾İÀ´°ïÖúÎÒÃÇ½øĞĞÅĞ¶Ï
+// æœ€åï¼Œæˆ‘ä»¬éœ€è¦å¯¹å…¶ä¸­çš„ä¸€éƒ¨åˆ†data directoryè¿›è¡Œè§£æ
+// é¦–å…ˆæ˜¯import directory
+// å…¶æ ¼å¼å¦‚ä¸‹ï¼šhttps://docs.microsoft.com/en-us/windows/win32/debug/pe-format#the-idata-section
+// ä¹‹å‰æˆ‘ä»¬ä¹Ÿå·²ç»è®²è¿‡äº†ï¼Œrvaå’Œraw addrçš„è½¬æ¢è§„åˆ™
+// éœ€è¦section jheaderä¸­çš„ä¸€äº›æ•°æ®æ¥å¸®åŠ©æˆ‘ä»¬è¿›è¡Œåˆ¤æ–­
 
-// ÏÈ»ñÈ¡µ½import directoryµÄÆ«ÒÆÁ¿
+// å…ˆè·å–åˆ°import directoryçš„åç§»é‡
 _ui raw_offset = 0;
 FUCK("import table RVA: 0x%0x\n",data_directory_map[_TEXT("import_table")].addr);
 for(int i=0;i<number_of_sections;i++) {
@@ -1978,16 +1978,18 @@ for(int i=0;i<number_of_sections;i++) {
     }
 }
 FUCK("raw offset disk addr 0x%08x", raw_offset);
-// ÏÖÔÚÎÒÃÇÖ»ĞèÒªÊ¹ÓÃseek¾ÍÄÜ¶¨Î»µ½ÎÄ¼şÖĞimport tableµÄÎ»ÖÃ
-cout("\n@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@¿ªÊ¼----½âÎödata directory----¿ªÊ¼@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");acout("\n");
+// ç°åœ¨æˆ‘ä»¬åªéœ€è¦ä½¿ç”¨seekå°±èƒ½å®šä½åˆ°æ–‡ä»¶ä¸­import tableçš„ä½ç½®
+cout("\n@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@å¼€å§‹----è§£ædata directory----å¼€å§‹@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");acout("\n");
 
 
 
-// ÆäÊµimport tableÒ²ÊÇÓµÓĞ¶à¸öÏîµÄ£¬ĞèÒªÑ­»·¶ÁÈ¡£¬½áÊø±êÖ¾¾ÍÊÇÄã¶ÁÈ¡³öÀ´µÄ20¸ö×Ö½ÚÈ«Îª¿Õ
-// µ«ÊÇÎÒ²»ÏëĞ´ÁË£¬ÒòÎªÒ»¿ªÊ¼Ğ´Õâ¸öµÄÊ±ºò¾ÍßãÓĞºÃºÃ¹æ»®£¬ÏÖÔÚĞ´µ½Á½Ç§¶àĞĞ£¬ÔÙÏëÖØ¹¹¾Í±ÈÒªÂé·³ÁË
-// ÖØÒªµÄÊÇÄÜ¹»Àí½âÏàév¸ÅÄî¾ÍĞĞÁË
+// å…¶å®import tableä¹Ÿæ˜¯æ‹¥æœ‰å¤šä¸ªé¡¹çš„ï¼Œéœ€è¦å¾ªç¯è¯»å–ï¼Œç»“æŸæ ‡å¿—å°±æ˜¯ä½ è¯»å–å‡ºæ¥çš„20ä¸ªå­—èŠ‚å…¨ä¸ºç©º
+// ä½†æ˜¯æˆ‘ä¸æƒ³å†™äº†ï¼Œå› ä¸ºä¸€å¼€å§‹å†™è¿™ä¸ªçš„æ—¶å€™å°±å’©æœ‰å¥½å¥½è§„åˆ’ï¼Œç°åœ¨å†™åˆ°ä¸¤åƒå¤šè¡Œï¼Œå†æƒ³é‡æ„å°±æ¯”è¦éº»çƒ¦äº†
+// é‡è¦çš„æ˜¯èƒ½å¤Ÿç†è§£ç›¸é–¢æ¦‚å¿µå°±è¡Œäº†
 _ui _boss_break_flag=0;
 _ui _boss_up_value = raw_offset;
+
+char* hex_sting_dll_name =(char*)malloc(4096);
 while(1){
     strm.seekg (raw_offset);
 memset(buffer,0,64);
@@ -2007,30 +2009,30 @@ strm.read(buffer, 4);
 cout("--------------------------import table");
 
 // Import Lookup Table RVA 4bytes
-// Õâ¸ö×Ö¶Î´æ´¢µÄÊÇlookp uptableµÄrva
+// è¿™ä¸ªå­—æ®µå­˜å‚¨çš„æ˜¯lookp uptableçš„rva
 time_stamp_umber_of_sections= _4_bytes_deal(buffer);
 _ui _ila_rva = time_stamp_umber_of_sections;
-cout("\n\tImport Lookup Table RVA£º");
+cout("\n\tImport Lookup Table RVAï¼š");
 printf("0x%x\n",time_stamp_umber_of_sections);
-// 4bytes Ê±¼ä´Á
+// 4bytes æ—¶é—´æˆ³
 strm.seekg (raw_offset+4);
 memset(buffer,0,64);
 strm.read(buffer, 4);
 
 
 time_stamp_umber_of_sections= _4_bytes_deal(buffer);
-cout("\tÊ±¼ä´Á£º");
+cout("\tæ—¶é—´æˆ³ï¼š");
 int _is_bound = time_stamp_umber_of_sections;
 printf("0x%x\n",time_stamp_umber_of_sections);
 
-// forward chain¡£Õâ¸öÎÒ»¹ÔİÊ±²»ÁË½âÊÇ¸öÊ²Ã´¶«Î÷
+// forward chainã€‚è¿™ä¸ªæˆ‘è¿˜æš‚æ—¶ä¸äº†è§£æ˜¯ä¸ªä»€ä¹ˆä¸œè¥¿
 strm.seekg (raw_offset+4+4);
 memset(buffer,0,64);
 strm.read(buffer, 4);
 
 
 time_stamp_umber_of_sections= _4_bytes_deal(buffer);
-cout("\tforward chain£º");
+cout("\tforward chainï¼š");
 printf("0x%x\n",time_stamp_umber_of_sections);
 
 
@@ -2041,13 +2043,13 @@ strm.read(buffer, 4);
 
 
 time_stamp_umber_of_sections= _4_bytes_deal(buffer);
-cout("\tDLL name address(RVA)£º");
+cout("\tDLL name address(RVA)ï¼š");
 printf("0x%x\n",time_stamp_umber_of_sections);
-// Í¨¹ıname addr rva»ñÈ¡µ½dllµÄÓÃ»§Ãû
-// Í¨¹ırva»ñÈ¡file pointerµÄ·½Ê½ºÍÉÏÃæµÄÒ»Ñù£¬ÄÇÎÒ¾Í°ÑÕâÒ»²¿·Ö´úÂëÖØĞ´³Çº¯Êı°Ñ
-// ËãÁË£¬ÀÁµÃĞ´ÁË£¬Ö±½ÓĞ´ÔÚÕâÀïËãÁË
-// Õ»ºÃÏñÒç³öÁË£¬ÒòÎªÎÒ°ÑËùÓĞ¶«Î÷¶¼Ğ´ÔÚmainº¯ÊıÀïÁË£¬¸Ğ¾õÒª±¬Õ¨ÁË¶¼
-// Ò»µã¶«Î÷¶¼Êä²»³öÀ´ÁË
+// é€šè¿‡name addr rvaè·å–åˆ°dllçš„ç”¨æˆ·å
+// é€šè¿‡rvaè·å–file pointerçš„æ–¹å¼å’Œä¸Šé¢çš„ä¸€æ ·ï¼Œé‚£æˆ‘å°±æŠŠè¿™ä¸€éƒ¨åˆ†ä»£ç é‡å†™åŸå‡½æ•°æŠŠ
+// ç®—äº†ï¼Œæ‡’å¾—å†™äº†ï¼Œç›´æ¥å†™åœ¨è¿™é‡Œç®—äº†
+// æ ˆå¥½åƒæº¢å‡ºäº†ï¼Œå› ä¸ºæˆ‘æŠŠæ‰€æœ‰ä¸œè¥¿éƒ½å†™åœ¨mainå‡½æ•°é‡Œäº†ï¼Œæ„Ÿè§‰è¦çˆ†ç‚¸äº†éƒ½
+// ä¸€ç‚¹ä¸œè¥¿éƒ½è¾“ä¸å‡ºæ¥äº†
 _ui name_raw_offset;
 for(int i=0;i<number_of_sections;i++) {
     FUCK("section virtual address : 0x%0x\n",p_section_header[i].virtual_address);
@@ -2055,10 +2057,10 @@ for(int i=0;i<number_of_sections;i++) {
     _ui fuckyou = p_section_header[i].virtual_address + p_section_header[i].virtual_size;
     FUCK("fuckyou: 0x%x\n",fuckyou);
     if(fuckyou >= time_stamp_umber_of_sections) {
-        cout("Ğ¡»ï×ÓÄãÔõÃ´»ØÊÂ£¿\n");
-        cout("Ğ¡»ï×ÓÄãÔõÃ´»ØÊÂ£¿\n");
+        cout("å°ä¼™å­ä½ æ€ä¹ˆå›äº‹ï¼Ÿ\n");
+        cout("å°ä¼™å­ä½ æ€ä¹ˆå›äº‹ï¼Ÿ\n");
         FUCK("0x%x\n",time_stamp_umber_of_sections);
-        cout("Ğ¡»ï×ÓÄãÔõÃ´»ØÊÂ£¿\n");
+        cout("å°ä¼™å­ä½ æ€ä¹ˆå›äº‹ï¼Ÿ\n");
          FUCK("0x%x\n",p_section_header[i].virtual_address);
         FUCK("%x\n",(_ui)p_section_header[i].virtual_address);
         FUCK("%x\n", p_section_header[i].pointer_to_raw_data);
@@ -2068,7 +2070,7 @@ for(int i=0;i<number_of_sections;i++) {
 }
         FUCK("name_raw_offset  %x\n", name_raw_offset);
          FUCK("name_raw_offset  %x\n", name_raw_offset);
-// dllÃû×Ö£¬·´ÕıÎÒÊÇÃ»¼û¹ıÓÃunicode£¬ËùÒÔÎÒÕâÀïÖ±½Óµ±×öascii½øĞĞ½âÎö
+// dllåå­—ï¼Œåæ­£æˆ‘æ˜¯æ²¡è§è¿‡ç”¨unicodeï¼Œæ‰€ä»¥æˆ‘è¿™é‡Œç›´æ¥å½“åšasciiè¿›è¡Œè§£æ
 hex_sting =(char*)malloc(4096);
 memset(hex_sting,0,4096);
 
@@ -2083,8 +2085,10 @@ for(int i=0;;i++){
    
 }
 
-cout("DLLµÄÃû×ÖÊÇ£º");
+cout("DLLçš„åå­—æ˜¯ï¼š");
 pout(hex_sting);cout("\n");
+memset(hex_sting_dll_name,0,4096);
+strcpy(hex_sting_dll_name, hex_sting);
 free(hex_sting);
 
 
@@ -2095,42 +2099,42 @@ strm.read(buffer, 4);
 
 
 time_stamp_umber_of_sections= _4_bytes_deal(buffer);
-cout("\tImport Address Table RVA£º");
+cout("\tImport Address Table RVAï¼š");
 printf("0x%x\n",time_stamp_umber_of_sections);
 
-// Import Lookup Table RVAºÍImport Address Table RVA£ºÖ¸ÏòµÄ½á¹¹ÊÇÒ»ÑùµÄ
-// Ö»ÓĞµ±fileÊÇboundµÄÊ±ºò£¬²Å»á²»Ò»Ñù£¬ÎÒ²»ÖªµÀÕâ¸öboundÊÇÉ¶ÒâË¼
-// ÎÒ²ÂÕâ¸öbound¿ÉÄÜÖµµÄÊÇ¾²Ì¬±àÒë£¿¾ÍÊÇ°ÑDLLºÍ¿ÉÖ´ĞĞÎÄ¼şÅªµ½Ò»ÆğÁË£¬¶ø²»ÊÇÔÚ¼ÓÔØµÄÊ±ºòÔÙ½²DLLµÄº¯ÊıµØÖ·Ìî³äµ½IATÖĞ
-// ÔÚ²»boundµÄÇé¿öÏÂ£¬ILTºÍIATµÄÄÚÈİÊÇÒ»ÑùµÄ
-// ÎÒÏÖÔÚÒ²¸ã²»Çå³şboundÊÇÉ¶ÒâË¼ÁË£¬ÒòÎªÎÒ×Ô¼ºÕâ¸ö²âÊÔPE¾ÍÊÇ¾²Ì¬±àÒëµÄ
-// ÎÒÔÚ±àÒëµÄÊ±ºòÊ¹ÓÃÁË/MT£¬¾ÍÊÇ¾²Ì¬±àÒë£¬µ«ÊÇPE-bear½âÎöÒÀÈ»ÏÔÊ¾unbound
-// ÎÒÃÇ¿ÉÒÔÍ¨¹ıÊ±¼ä´ÁÀ´ÅĞ¶ÏÊÇ·ñÊÇboundµÄ
-// ¸ù¾İ¹Ù·½ÎÄµµ£ºThe stamp that is set to zero until the image is bound.
-// Òò´ËÈç¹ûÊ±¼ä´ÁÊÇ0£¬ÄÇÃ´¾ÍËµÃ÷Õâ¸öPEÎÄ¼şÊÇunboundµÄ
+// Import Lookup Table RVAå’ŒImport Address Table RVAï¼šæŒ‡å‘çš„ç»“æ„æ˜¯ä¸€æ ·çš„
+// åªæœ‰å½“fileæ˜¯boundçš„æ—¶å€™ï¼Œæ‰ä¼šä¸ä¸€æ ·ï¼Œæˆ‘ä¸çŸ¥é“è¿™ä¸ªboundæ˜¯å•¥æ„æ€
+// æˆ‘çŒœè¿™ä¸ªboundå¯èƒ½å€¼çš„æ˜¯é™æ€ç¼–è¯‘ï¼Ÿå°±æ˜¯æŠŠDLLå’Œå¯æ‰§è¡Œæ–‡ä»¶å¼„åˆ°ä¸€èµ·äº†ï¼Œè€Œä¸æ˜¯åœ¨åŠ è½½çš„æ—¶å€™å†è®²DLLçš„å‡½æ•°åœ°å€å¡«å……åˆ°IATä¸­
+// åœ¨ä¸boundçš„æƒ…å†µä¸‹ï¼ŒILTå’ŒIATçš„å†…å®¹æ˜¯ä¸€æ ·çš„
+// æˆ‘ç°åœ¨ä¹Ÿæä¸æ¸…æ¥šboundæ˜¯å•¥æ„æ€äº†ï¼Œå› ä¸ºæˆ‘è‡ªå·±è¿™ä¸ªæµ‹è¯•PEå°±æ˜¯é™æ€ç¼–è¯‘çš„
+// æˆ‘åœ¨ç¼–è¯‘çš„æ—¶å€™ä½¿ç”¨äº†/MTï¼Œå°±æ˜¯é™æ€ç¼–è¯‘ï¼Œä½†æ˜¯PE-bearè§£æä¾ç„¶æ˜¾ç¤ºunbound
+// æˆ‘ä»¬å¯ä»¥é€šè¿‡æ—¶é—´æˆ³æ¥åˆ¤æ–­æ˜¯å¦æ˜¯boundçš„
+// æ ¹æ®å®˜æ–¹æ–‡æ¡£ï¼šThe stamp that is set to zero until the image is bound.
+// å› æ­¤å¦‚æœæ—¶é—´æˆ³æ˜¯0ï¼Œé‚£ä¹ˆå°±è¯´æ˜è¿™ä¸ªPEæ–‡ä»¶æ˜¯unboundçš„
 _ila_rva = convert_rva_to_file_pointer(_ila_rva, p_section_header, number_of_sections);
 if(_is_bound>0) {
-    // ÊÇbound£¬ÏÈ²»¹Ü
+    // æ˜¯boundï¼Œå…ˆä¸ç®¡
 } else {
     
-    cout("Ã»ÓĞ°ó¶¨\n");
+    cout("æ²¡æœ‰ç»‘å®š\n");
     int _break_flag=0;
     _ui _up_value = 0;
     while(1) {
-        // cout("·¢ÉúÉñÄ§ÊÇÁË£¿");
+        // cout("å‘ç”Ÿç¥é­”æ˜¯äº†ï¼Ÿ");
          
         FUCK("_ila_rva 0x%x\n", _ila_rva);
-        // ÒòÎªÕâÊÇÒ»¸ö±í£¬ËùÒÔÎÒÃÇÒªÒ»Ö±²»Í£µØ¶Á£¬Ö±µ½¶ÁÈ¡³öÀ´µÄimage_bse_sizeofÈ«¶¼ÊÇ¿Õ
+        // å› ä¸ºè¿™æ˜¯ä¸€ä¸ªè¡¨ï¼Œæ‰€ä»¥æˆ‘ä»¬è¦ä¸€ç›´ä¸åœåœ°è¯»ï¼Œç›´åˆ°è¯»å–å‡ºæ¥çš„image_bse_sizeofå…¨éƒ½æ˜¯ç©º
         // unbound
-        // Ö±½Ó¿´ILT£¨import loookup table£©¼´¿É
-        // ´æÔÚPE32ºÍPE32+µÄÇø±ğ£¬Ç°ÕßÎª32bit£¬ºóÕßÎª64bit
-        // Í¨¹ıimage_bse_sizeofÎÒÃÇ¿ÉÒÔÈ·¶¨ËûÊÇpe32»¹ÊÇpe32+
+        // ç›´æ¥çœ‹ILTï¼ˆimport loookup tableï¼‰å³å¯
+        // å­˜åœ¨PE32å’ŒPE32+çš„åŒºåˆ«ï¼Œå‰è€…ä¸º32bitï¼Œåè€…ä¸º64bit
+        // é€šè¿‡image_bse_sizeofæˆ‘ä»¬å¯ä»¥ç¡®å®šä»–æ˜¯pe32è¿˜æ˜¯pe32+
         _ui _hint_name_table_rva;
         _ui _ordinal;
         FUCK("_ila_rva 0x%x\n", _ila_rva);
         
         strm.seekg (_ila_rva+_up_value);
         memset(buffer,0,64);
-        // PE32+Õ¼ÓÃ64bit£¬¼´8bytes
+        // PE32+å ç”¨64bitï¼Œå³8bytes
         strm.read(buffer, image_bse_sizeof);
         _up_value+=image_bse_sizeof;
         for(int i=0;i<image_bse_sizeof;i++) {
@@ -2141,15 +2145,15 @@ if(_is_bound>0) {
             if(i+2>image_bse_sizeof) _break_flag = 1;
         }
         if(_break_flag>0) break;
-        // Ordinal Number£¬Õâ¸ö×Ö¶ÎÖ»ÓĞÔÚOrdinal/Name±êÖ¾Î»ÆôÓÃµÄÊ±ºò²Å»áÓĞÒâÒå
-        // Òò´ËÎÒÃÇĞèÒªÏÈ²é¿´×îºóÒ»¸öbitÎ»£¬ÒòÎª×îºóÒ»¸öbitÎ»¾ö¶¨ÁËOrdinal/Name±êÖ¾Î»ÊÇ·ñÆôÓÃ
+        // Ordinal Numberï¼Œè¿™ä¸ªå­—æ®µåªæœ‰åœ¨Ordinal/Nameæ ‡å¿—ä½å¯ç”¨çš„æ—¶å€™æ‰ä¼šæœ‰æ„ä¹‰
+        // å› æ­¤æˆ‘ä»¬éœ€è¦å…ˆæŸ¥çœ‹æœ€åä¸€ä¸ªbitä½ï¼Œå› ä¸ºæœ€åä¸€ä¸ªbitä½å†³å®šäº†Ordinal/Nameæ ‡å¿—ä½æ˜¯å¦å¯ç”¨
         _ui _temp_fucking_value;
         if(image_bse_sizeof>4)
             _temp_fucking_value = (_ui)buffer[7];
         else
             _temp_fucking_value = (_ui)buffer[3];
         if(_temp_fucking_value>0) {
-            // ÆôÓÃordinal
+            // å¯ç”¨ordinal
             hex_sting = (char*)malloc(4+1);memset(hex_sting,0,4+1);
             sprintf(_tmnp_string,"%02x",(unsigned char)buffer[1]);
             strcpy(hex_sting, _tmnp_string);
@@ -2161,52 +2165,54 @@ if(_is_bound>0) {
         } else {
             _hint_name_table_rva = _4_bytes_deal(buffer);
         
-            cout("HINT/NAME table RVA£º");
+            cout("HINT/NAME table RVAï¼š");
             printf("\n\t0x%x\n", _hint_name_table_rva);
-            // ½«RVA×ª»»³Édisk file pointer
+            // å°†RVAè½¬æ¢æˆdisk file pointer
 
             _hint_name_table_rva = convert_rva_to_file_pointer(_hint_name_table_rva, p_section_header, number_of_sections);
             
-            // È»Äê¸ù¾İ_hint_name_table_rvaÀ´¶ÁÈ¡HINT/NAME Table
+            // ç„¶å¹´æ ¹æ®_hint_name_table_rvaæ¥è¯»å–HINT/NAME Table
             strm.seekg (_hint_name_table_rva);
             memset(buffer,0,64);
-            // 2bytesµÄhint£¬ÎÒÔİÊ±»¹²»Çå³şÕâ¸öhintÓĞÉ¶ÓÃ
+            // 2bytesçš„hintï¼Œæˆ‘æš‚æ—¶è¿˜ä¸æ¸…æ¥šè¿™ä¸ªhintæœ‰å•¥ç”¨
             strm.read(buffer, 2);
-          // ¡¢¡¢ _up_value+=2;
+          // ã€ã€ _up_value+=2;
             _ui _hint = _2_bytes_deal(buffer);
-            cout("HINT£º");
+            cout("HINTï¼š");
             printf("0x%x\n", _hint);
             
-            // È»ºóºóÃæÊÇÒªµ¼ÈëµÄº¯ÊıµÄÃû³Æ£¬ascii×Ö·û´®£¬ÒÔNULL½áÎ²£¬ËùÒÔ¾ÍÒ»Ö±¶ÁÈ¡¾ÍÍêÊÂÁË
+            // ç„¶ååé¢æ˜¯è¦å¯¼å…¥çš„å‡½æ•°çš„åç§°ï¼Œasciiå­—ç¬¦ä¸²ï¼Œä»¥NULLç»“å°¾ï¼Œæ‰€ä»¥å°±ä¸€ç›´è¯»å–å°±å®Œäº‹äº†
             char function_name[4086]={0};
             _read_ascii(_hint_name_table_rva+2, &strm, function_name);
             // _up_value=_up_value+strlen(function_name)+1;
-            cout("º¯ÊıÃû£º");
+            pout(hex_sting_dll_name);cout("-------");cout("å‡½æ•°åï¼š");
             printf("\t%s\n", function_name);
         }
     }
 
 }raw_offset+=20;
 }
+
+free(hex_sting_dll_name);
 // raw_offset = _boss_up_value;
 
 
-// ÔÙ½âÎöÒ»¸ödata directory  base reloc
-// ¶ÔÓ¦.reloc   Ö®Ç°µÄimport table¶ÔÓ¦.idata
+// å†è§£æä¸€ä¸ªdata directory  base reloc
+// å¯¹åº”.reloc   ä¹‹å‰çš„import tableå¯¹åº”.idata
 //return 0;
 //stdout.close();
 fclose(stdout);
 cout("--------------------------base relocation table\n");
 exit( 0);
-// Õâ¸ö½á¹¹¸úÉÏÃæµÄimport table²î²»¶à£¬Ò²ÊÇÌ×ÍŞ½á¹¹£¬Ö»²»¹ıÃ»ÓĞ½áÊø±êÖ¾£¬ÊÇÍ¨¹ısizeÀ´ÅĞ¶ÏÊÇ·ñ½áÊø
-// Ê×ÏÈĞèÒª»ñÈ¡reloca trableµÄrvaºÍsize£¬Õâ¸ö¿ÉÒÔÖ±½ÓÊ¹ÓÃÎÒÃÇµÄdata_directory_map»ñÈ¡
+// è¿™ä¸ªç»“æ„è·Ÿä¸Šé¢çš„import tableå·®ä¸å¤šï¼Œä¹Ÿæ˜¯å¥—å¨ƒç»“æ„ï¼Œåªä¸è¿‡æ²¡æœ‰ç»“æŸæ ‡å¿—ï¼Œæ˜¯é€šè¿‡sizeæ¥åˆ¤æ–­æ˜¯å¦ç»“æŸ
+// é¦–å…ˆéœ€è¦è·å–reloca trableçš„rvaå’Œsizeï¼Œè¿™ä¸ªå¯ä»¥ç›´æ¥ä½¿ç”¨æˆ‘ä»¬çš„data_directory_mapè·å–
  data_directory_map[_TEXT("base_relocation_table")].addr;
  data_directory_map[_TEXT("base_relocation_table")].size;
 
-//  Í¨¹ıRVA¼ÆËãfile pointer
+//  é€šè¿‡RVAè®¡ç®—file pointer
 _ui _file_pointer_to_relocation_table = convert_rva_to_file_pointer(data_directory_map[_TEXT("base_relocation_table")].addr, p_section_header, number_of_sections);
 
-// ÏÂÃæÕâ¸öÌ«ÀË·ÑÊ±¼äÁË£¬¸Ğ¾õÒ²Ã»É¶ÓÃ£¬ÏÈ×¢ÊÍµô
+// ä¸‹é¢è¿™ä¸ªå¤ªæµªè´¹æ—¶é—´äº†ï¼Œæ„Ÿè§‰ä¹Ÿæ²¡å•¥ç”¨ï¼Œå…ˆæ³¨é‡Šæ‰
 //
 _boss_up_value=_file_pointer_to_relocation_table;
 while(1){
@@ -2214,18 +2220,18 @@ while(1){
     if(_temp_fuck_value>= data_directory_map[_TEXT("base_relocation_table")].size) break;
     strm.seekg (_file_pointer_to_relocation_table);
     memset(buffer,0,64);
-    // ¶ÁÈ¡page rva
+    // è¯»å–page rva
     strm.read(buffer, 4);
     time_stamp_umber_of_sections = _4_bytes_deal(buffer);
-    cout("\npage RVA£º");
+    cout("\npage RVAï¼š");
     printf("\t0x%x\n", time_stamp_umber_of_sections);
     acout("\n");
     strm.seekg (_file_pointer_to_relocation_table+4);
     memset(buffer,0,64);
-    // ¶ÁÈ¡block size
+    // è¯»å–block size
     strm.read(buffer, 4);
     time_stamp_umber_of_sections = _4_bytes_deal(buffer);
-    cout("size£º");
+    cout("sizeï¼š");
     _ui __block_size = time_stamp_umber_of_sections;
     printf("\t0x%x\n++++++++++++++++++++++++++++++++++", time_stamp_umber_of_sections);
     acout("\n");
@@ -2233,21 +2239,21 @@ while(1){
     while((_up_value)<(__block_size-8)) {
         strm.seekg (_file_pointer_to_relocation_table+4+4+_up_value);
         memset(buffer,0,64);
-        // ¶ÁÈ¡block size
+        // è¯»å–block size
         strm.read(buffer, 2);
         unsigned short _fuck_you = _2_bytes_deal(buffer);
-        // »ñÈ¡×î¸ß4bit
+        // è·å–æœ€é«˜4bit
         _ui _high_4_bit = (_ui)(_fuck_you >> 12);
-        cout("base relocation ÀàĞÍ£º");
+        cout("base relocation ç±»å‹ï¼š");
         printf("\t0x%x\n", _high_4_bit);
         _ui _offset_value = _fuck_you & 0xFFF;
-        cout("Æ«ÒÆÁ¿£º");
+        cout("åç§»é‡ï¼š");
         printf("\t0x%x\n", _offset_value);
         _up_value+=2;
     }
     _file_pointer_to_relocation_table+=__block_size;
 }
-cout("\n@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@½áÊø----½âÎödata directory----½áÊø@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+cout("\n@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ç»“æŸ----è§£ædata directory----ç»“æŸ@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
 
 
 
