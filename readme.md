@@ -19,3 +19,8 @@ pe-parser.exe C:\users\x\downloads\srv2.sys
 for some reason (maybe my shit code), you have to run it in visual studio
 
 result will be saved in .\motherfuckerout.txt
+
+
+turns out my code can only run normally with debugger: https://stackoverflow.com/questions/16696444/differences-between-running-an-executable-with-visual-studio-debugger-vs-without
+
+because the heap is different with debugger and standalone
