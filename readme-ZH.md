@@ -14,3 +14,9 @@ pe-parser.exe C:\users\x\downloads\srv2.sys
 ```
 
 输出结果会保存在当前目录下的`motehrfuckerout.txt`中
+
+程序只能在vs中运行的原因是堆内存在调试器下和cmd下不一样
+
+https://stackoverflow.com/questions/16696444/differences-between-running-an-executable-with-visual-studio-debugger-vs-without
+
+凑合用吧
