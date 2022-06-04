@@ -1,6 +1,6 @@
 [中文](https://github.com/motherfucker12138/pe-parser/blob/main/readme-ZH.md)
 
-BUILD WITH VS2012
+**BUILD WITH VS2012**
 
 I don't know how to export the functions in import table of PE file with [PE-bear](https://github.com/hasherezade/pe-bear-releases)
 
